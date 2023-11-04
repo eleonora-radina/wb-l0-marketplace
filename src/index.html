@@ -55,67 +55,113 @@
   <main class="main">
     <div class="content">
       <section class="basket__content">
-        <p>Корзина</p>
+        <h1 class="basket__header">Корзина</h1>
+        
+        <div class="basket__list">
+          <div class="basket__list-header">
+            <label for="all-available-checkbox" class="form__label">
+              <input type="checkbox" name="all-available-checkbox" id="all-available-checkbox" class="form__item"
+                value="all-available">
+              <span class="form__pseudo-item form__pseudo-item_list"></span>
+              <span class="form__label-text">Выбрать все</span>
+            </label>
+            <img class="basket__list-icon" src="<%=require('./images/accordion.svg')%>" alt="accordion">
+          </div>
+        
+          <div class="basket__list-zone">
+            <div class="basket__item">
+              <div class="basket__item-description">
+                <label for="item-checkbox" class="form__label">
+                  <input type="checkbox" name="item-checkbox" id="item-checkbox" class="form__item" value="item-checkbox">
+                  <span class="form__pseudo-item form__pseudo-item_list"></span>
+                </label>
+                <img class="basket__item-photo" src="<%=require('./images/Frame 3853.jpg')%>" alt="img">
+                <div class="basket__item-details">
+                  <p class="basket__item-name">Футболка UZcotton мужская</p>
+                  <div class="basket__item-details-line">
+                    <p class="basket__item-detail">Цвет: белый</p>
+                    <p class="basket__item-detail">Размер: 56</p>
+                  </div>
+                  <p class="basket__item-detail basket__item-detail_grey">Коледино WB</p>
+                  <div class="basket__item-details-line">
+                    <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
+                    <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
+                  </div>
+        
+                </div>
+              </div>
+              <div class="basket__item-price">
+        
+              </div>
+            </div>
+          </div>
+        </div>
         </section>
-        <section class="sidebar">
-        
-          <div class="sidebar__info">
-            <div class="sidebar__total">
-              <p class="sidebar__total-text">Итого</p>
-              <p class="sidebar__total-text">2 101 063 <span class="sidebar__total-text-currency">сом</span></p>
-            </div>
-            <div class="sidebar__details">
-              <p class="sidebar__details-text">203 товара</p>
-              <p class="sidebar__details-text">2 302 048 сом</p>
-            </div>
-            <div class="sidebar__details">
-              <p class="sidebar__details-text">Скидка</p>
-              <p class="sidebar__details-text">−200 985 сом</p>
-            </div>
-            <div class="sidebar__details">
-              <p class="sidebar__details-text">Доставка</p>
-              <p class="sidebar__details-text">Бесплатно</p>
-            </div>
-          </div>
-        
-          <div class="sidebar__info">
-            <div class="sidebar__info-header-zone">
-              <p class="sidebar__info-header">Доставка в пункт выдачи</p>
-              <button class="sidebar__info-edit-button"></button>
-            </div>
-            <p class="sidebar__info-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
-            <p class="sidebar__info-text sidebar__info-text_date">5−8 фев</p>
-            <div class="sidebar__info-price-zone">
-              <img class="sidebar__info-tick-price" src="<%=require('./images/shipping.svg')%>" alt="Галочка зеленая">
-              <p class="sidebar__info-text">Обратная доставка товаров на склад при отказе — <span
-                  class="sidebar__info-text sidebar__info-text_free">бесплатно</span></p>
-            </div>
-          </div>
-          
-          <div class="sidebar__info">
-            <div class="sidebar__info-header-zone">
-              <p class="sidebar__info-header">Оплата картой</p>
-              <button class="sidebar__info-edit-button"></button>
-            </div>
-            <div class="sidebar__card">
-              <img class="sidebar__info-payment-img" src="<%=require('./images/mirlogo.svg')%>" alt="MIR">
-              <p class="sidebar__info-text">1234 12•• •••• 1234</p>
-            </div>
-            <div class="sidebar__info-payment-zone">
-              <input type="checkbox" id="checkbox" name="checkbox" class="sidebar__info-payment-checkbox" />
-              <label for="checkbox" class="sidebar__info-text">Списать оплату сразу</label>
-              <p class="sidebar__info-text">Спишем оплату с карты при получении</p>
-            </div>
-          </div>
 
-          <div class="sidebar__info">
-            <button class="sidebar__button-order">Заказать</button>
-            <div class="sidebar__button-rules">
-              <img class="sidebar__info-tick" src="<%=require('./images/tick.svg')%>" alt="Галочка">
-              <p class="sidebar__info-text">Соглашаюсь с правилами пользования торговой площадкой и возврата</p>
-            </div>
+      <section class="sidebar">
+      
+        <div class="sidebar__info">
+          <div class="sidebar__total">
+            <p class="sidebar__total-text">Итого</p>
+            <p class="sidebar__total-text">2 101 063 <span class="sidebar__total-text-currency">сом</span></p>
           </div>
-          </section>
+          <div class="sidebar__details">
+            <p class="sidebar__details-text">203 товара</p>
+            <p class="sidebar__details-text">2 302 048 сом</p>
+          </div>
+          <div class="sidebar__details">
+            <p class="sidebar__details-text">Скидка</p>
+            <p class="sidebar__details-text">−200 985 сом</p>
+          </div>
+          <div class="sidebar__details">
+            <p class="sidebar__details-text">Доставка</p>
+            <p class="sidebar__details-text">Бесплатно</p>
+          </div>
+        </div>
+      
+        <div class="sidebar__info">
+          <div class="sidebar__info-header-zone">
+            <p class="sidebar__info-header">Доставка в пункт выдачи</p>
+            <button class="sidebar__info-edit-button"></button>
+          </div>
+          <p class="sidebar__info-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+          <p class="sidebar__info-text sidebar__info-text_date">5−8 фев</p>
+          <div class="sidebar__info-price-zone">
+            <img class="sidebar__info-tick-price" src="<%=require('./images/shipping.svg')%>" alt="Галочка зеленая">
+            <p class="sidebar__info-text">Обратная доставка товаров на склад при отказе — <span
+                class="sidebar__info-text sidebar__info-text_free">бесплатно</span></p>
+          </div>
+        </div>
+      
+        <div class="sidebar__info">
+          <div class="sidebar__info-header-zone">
+            <p class="sidebar__info-header">Оплата картой</p>
+            <button class="sidebar__info-edit-button"></button>
+          </div>
+          <div class="sidebar__card">
+            <img class="sidebar__info-payment-img" src="<%=require('./images/mirlogo.svg')%>" alt="MIR">
+            <p class="sidebar__info-text">1234 12•• •••• 1234</p>
+          </div>
+          <div class="sidebar__info-payment-zone">
+            <label for="payment-checkbox" class="form__label">
+              <input type="checkbox" name="payment-checkbox" id="payment-checkbox" class="form__item" value="payment">
+              <span class="form__pseudo-item"></span>
+              <span class="form__label-text">Списать оплату сразу</span>
+            </label>
+            <p class="sidebar__info-text sidebar__info-text-payment">Спишем оплату с карты при получении</p>
+            </div>
+            </div>
+
+        <div class="sidebar__info">
+          <button class="sidebar__button-order">Заказать</button>
+          <div class="sidebar__button-rules">
+            <img class="sidebar__info-tick" src="<%=require('./images/tick.svg')%>" alt="Галочка">
+            <p class="sidebar__info-text sidebar__info-text-sogl">Соглашаюсь с правилами пользования торговой площадкой
+              и возврата
+            </p>
+            </div>
+            </div>
+            </section>
     </div>
   </main>
 </body>

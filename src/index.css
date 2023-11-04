@@ -135,13 +135,6 @@
   justify-content: space-between;
 }
 
-.basket__content {
-  max-width: 891px;
-  background-color: #fff;
-  border-radius: 16px;
-  min-width: 640px;
-}
-
 .sidebar {
   background-color: #fff;
   border-radius: 16px;
@@ -237,7 +230,7 @@
 
 .sidebar__card {
   display: flex;
-  margin: 2px 0 12px;
+  margin: 2px 0 10px;
 }
 
 .sidebar__info-payment-img {
@@ -270,11 +263,12 @@
   height: 44px;
   margin-top: 24px;
   margin-bottom: 8px;
+  padding: 0 0 5px;
 }
 
 .sidebar__button-rules {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .sidebar__info-tick {
@@ -285,4 +279,119 @@
 
 .sidebar__total-text-currency {
   font-size: 20px;
+}
+.form__label-text {
+  margin-left: 4px;
+  margin-top: 1px;
+}
+
+.form__pseudo-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 21px;
+  height: 21px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2), ;
+}
+
+.form__item {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.form__label {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.23;
+}
+
+.form__item:checked+.form__pseudo-item {
+  background: #CB11AB url('./images/whitetick.svg') center no-repeat;
+  border-color: #CB11AB;
+}
+
+.sidebar__info-text-payment {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.sidebar__info-text-sogl {
+  margin-top: 4px;
+}
+
+.basket__content {
+  max-width: 891px;
+  min-width: 640px;
+  width: 100%;
+}
+
+.basket__header {
+  font-size: 28px;
+  line-height: 1.28;
+  margin: 10px 0 27px;
+}
+
+.basket__list {}
+
+.basket__list-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.basket__list-icon {
+  width: 20px;
+  height: 20px;
+  align-self: center;
+}
+
+.form__pseudo-item_list {
+  vertical-align: middle;
+}
+
+.basket__list-zone {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 11px;
+}
+
+.basket__item-description {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.basket__item-photo {
+  border-radius: 8px;
+  width: 72px;
+  height: 96px;
+  box-sizing: border-box;
+  margin-right: 4px;
+}
+
+.basket__item-name {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.basket__item-detail {
+  font-size: 13px;
+  line-height: 1.23;
+  margin: 0;
+}
+
+.basket__item-details-line {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.basket__item-detail_grey {
+  color: #9797AF;
 }
