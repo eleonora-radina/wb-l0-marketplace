@@ -63,15 +63,15 @@
               <input type="checkbox" name="all-available-checkbox" id="all-available-checkbox" class="form__item"
                 value="all-available">
               <span class="form__pseudo-item form__pseudo-item_list"></span>
-              <span class="form__label-text">Выбрать все</span>
+              <span class="form__label-text basket__checkbox">Выбрать все</span>
             </label>
             <img class="basket__list-icon" src="<%=require('./images/accordion.svg')%>" alt="accordion">
           </div>
         
           <div class="basket__list-zone">
             <div class="basket__item">
-              <div class="basket__item-description">
-                <label for="item-checkbox" class="form__label">
+              <div class="basket__item-info">
+                <label for="item-checkbox" class="form__label basket__item-checkbox">
                   <input type="checkbox" name="item-checkbox" id="item-checkbox" class="form__item" value="item-checkbox">
                   <span class="form__pseudo-item form__pseudo-item_list"></span>
                 </label>
@@ -87,11 +87,101 @@
                     <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
                     <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
                   </div>
-        
                 </div>
-              </div>
-              <div class="basket__item-price">
-        
+                </div>
+                
+                <div class="basket__item-info-price">
+                  <div class="basket__item-controls">
+                    <div class="basket__item-counter">
+                      <button class="counter__minus">−</button>
+                      <input class="counter__number" type="number" minlength="1" maxlength="2" value="1" autocomplete="off">
+                      <button class="counter__plus">+</button>
+                    </div>
+                    <p class="basket__item-left">Осталось 2 шт.</p>
+                    <div class="basket__item-buttons">
+                      <button class="basket__item-like" type='button' aria-label='Лайк'></button>
+                      <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                    </div>
+                  </div>
+                  <div class="basket__item-prices">
+                    <p class="basket__item-final-price">522<span class="small"> сом</span></p>
+                    <p class="basket__item-price">1051 сом</p>
+                  </div>
+                </div>
+                </div>
+                <div class="basket__item">
+                  <div class="basket__item-info">
+                    <label for="item-checkbox2" class="form__label basket__item-checkbox">
+                      <input type="checkbox" name="item-checkbox2" id="item-checkbox2" class="form__item" value="item-checkbox">
+                      <span class="form__pseudo-item form__pseudo-item_list"></span>
+                    </label>
+                    <img class="basket__item-photo" src="<%=require('./images/Frame 277132129.jpg')%>" alt="img">
+                    <div class="basket__item-details">
+                      <p class="basket__item-name">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple
+                        iPhone XR, MobiSafe</p>
+                      <div class="basket__item-details-line">
+                        <p class="basket__item-detail">Цвет: прозрачный</p>
+                        <p class="basket__item-detail"> </p>
+                      </div>
+                      <p class="basket__item-detail basket__item-detail_grey">Коледино WB</p>
+                      <div class="basket__item-details-line">
+                        <p class="basket__item-detail basket__item-detail_grey">ООО Мегапрофстиль</p>
+                        <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="basket__item-info-price">
+                    <div class="basket__item-controls">
+                      <div class="basket__item-counter">
+                        <button class="counter__minus">–</button>
+                        <input class="counter__number" type="number" value="200" autocomplete="off">
+                        <button class="counter__plus">+</button>
+                      </div>
+                      <div class="basket__item-buttons">
+                        <button class="basket__item-like" type='button' aria-label='Лайк'></button>
+                        <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                      </div>
+                    </div>
+                    <div class="basket__item-prices">
+                      <p class="basket__item-final-price"><span class="small">2 100 047 сом</span></p>
+                      <p class="basket__item-price">2 300 047 сом</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="basket__item">
+                  <div class="basket__item-info">
+                    <label for="item-checkbox3" class="form__label basket__item-checkbox">
+                      <input type="checkbox" name="item-checkbox3" id="item-checkbox3" class="form__item" value="item-checkbox">
+                      <span class="form__pseudo-item form__pseudo-item_list"></span>
+                    </label>
+                    <img class="basket__item-photo" src="<%=require('./images/Frame 277132129 (1).jpg')%>" alt="img">
+                    <div class="basket__item-details">
+                      <p class="basket__item-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                        шестигранные,<br>Faber-Castell</p>
+                      <p class="basket__item-detail basket__item-detail_grey">Коледино WB</p>
+                      <div class="basket__item-details-line">
+                        <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
+                        <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="basket__item-info-price">
+                    <div class="basket__item-controls">
+                      <div class="basket__item-counter">
+                        <button class="counter__minus">–</button>
+                        <input class="counter__number" type="number" minlength="1" maxlength="2" value="2" autocomplete="off">
+                        <button class="counter__plus">+</button>
+                      </div>
+                      <p class="basket__item-left">Осталось 2 шт.</p>
+                      <div class="basket__item-buttons">
+                        <button class="basket__item-like" type='button' aria-label='Лайк'></button>
+                        <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                      </div>
+                      </div>
+                      <div class="basket__item-prices">
+                        <p class="basket__item-final-price">494<span class="small"> сом</span></p>
+                        <p class="basket__item-price">950 сом</p>
+                      </div>
               </div>
             </div>
           </div>

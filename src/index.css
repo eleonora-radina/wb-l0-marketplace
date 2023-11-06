@@ -1,5 +1,16 @@
 @import url('../vendor/normalize.css');
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
 .page {
   background-color: #F6F6FA;
   min-width: 320px;
@@ -143,6 +154,7 @@
   max-width: 429px;
   min-width: 303px;
   width: 100%;
+  max-height: 572px;
 }
 
 .sidebar__info {
@@ -331,7 +343,14 @@
 .basket__header {
   font-size: 28px;
   line-height: 1.28;
-  margin: 10px 0 27px;
+  margin: 10px 0 24px;
+    letter-spacing: -0.28px;
+  }
+  
+  .basket__checkbox {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-left: 7px;
 }
 
 .basket__list {}
@@ -340,12 +359,11 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+  margin-right: 1px;
 }
 
 .basket__list-icon {
-  width: 20px;
-  height: 20px;
-  align-self: center;
+  margin-top: 3px;
 }
 
 .form__pseudo-item_list {
@@ -354,13 +372,14 @@
 
 .basket__list-zone {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 11px;
+  padding-top: 9px;
 }
 
-.basket__item-description {
+.basket__item-info {
   display: flex;
   gap: 12px;
-  align-items: center;
+  max-width: 397px;
+    padding-top: 2px;
 }
 
 .basket__item-photo {
@@ -375,23 +394,148 @@
   font-size: 16px;
   line-height: 1.5;
   margin: 0;
-  margin-bottom: 4px;
+  margin-bottom: 7px;
 }
 
 .basket__item-detail {
   font-size: 13px;
   line-height: 1.23;
   margin: 0;
+  margin-right: 11px;
 }
 
 .basket__item-details-line {
   display: flex;
-  gap: 16px;
+  gap: 6px;
   margin-bottom: 8px;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .basket__item-detail_grey {
   color: #9797AF;
+  margin-right: 0;
+  }
+  
+  .basket__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .basket__item-info-price {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .basket__item-controls {}
+  
+  .basket__item-counter {
+    background-color: #fff;
+    border-radius: 8px;
+    height: 44px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .counter__minus {
+    border: none;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 0;
+    letter-spacing: -0.2px;
+  }
+  
+  .counter__plus {
+    border: none;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 0 0 2px 3px;
+  }
+  
+  .counter__number {
+    border: none;
+    background-color: transparent;
+    width: 44px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 0 1px 1px;
+    margin: 0;
+  }
+  
+  .counter__number:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+  
+  .basket__item-left {
+    color: #FF3B30;
+    font-size: 13px;
+    line-height: 1.23;
+    margin: 9px 0 0;
+  }
+  
+  .basket__item-like {
+    background: transparent url('./images/heart.svg') center no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+  }
+  
+  .basket__item-delete {
+    background: transparent url('./images/trash.svg') center no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+  }
+  
+  .basket__item-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 9px;
+    margin-bottom: 10px;
+  }
+  
+  .basket__item-prices {
+    display: flex;
+    width: 110px;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  
+  .basket__item-final-price {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 6px;
+  }
+  
+  .basket__item-price {
+    font-size: 13px;
+    line-height: 1.23;
+    color: #9797AF;
+    text-decoration: line-through;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.20);
+    margin: 0;
+  }
+  
+  .basket__item-final-price .small {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .basket__item-checkbox {
+    margin-top: 36.5px;
 }
