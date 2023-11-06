@@ -11,6 +11,7 @@ input[type="number"]:focus {
   appearance: none;
   -moz-appearance: textfield;
 }
+
 .page {
   background-color: #F6F6FA;
   min-width: 320px;
@@ -134,7 +135,9 @@ input[type="number"]:focus {
   border: none;
   opacity: 0.4;
   margin-top: 2px;
+  cursor: pointer;
 }
+
 .main {
   max-width: 1400px;
   margin: 0 auto;
@@ -209,6 +212,7 @@ input[type="number"]:focus {
   width: 20px;
   height: 20px;
   margin-top: 2px;
+  cursor: pointer;
 }
 
 .sidebar__info-text {
@@ -242,17 +246,21 @@ input[type="number"]:focus {
 
 .sidebar__card {
   display: flex;
-  margin: 2px 0 10px;
+  margin: 2px 0 0;
+    align-items: center;
 }
 
 .sidebar__info-payment-img {
   margin-right: 8px;
+  height: 24px;
+    width: 32px;
 }
 
 .sidebar__info-payment-zone {
   background-color: #F6F6FA;
   border-radius: 8px;
   padding: 8px 8px 12px 8px;
+  margin-top: 12px;
 }
 
 .sidebar__info-payment-checkbox {
@@ -276,6 +284,7 @@ input[type="number"]:focus {
   margin-top: 24px;
   margin-bottom: 8px;
   padding: 0 0 5px;
+  cursor: pointer;
 }
 
 .sidebar__button-rules {
@@ -292,6 +301,7 @@ input[type="number"]:focus {
 .sidebar__total-text-currency {
   font-size: 20px;
 }
+
 .form__label-text {
   margin-left: 4px;
   margin-top: 1px;
@@ -303,7 +313,8 @@ input[type="number"]:focus {
   width: 21px;
   height: 21px;
   border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.2), ;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .form__item {
@@ -344,7 +355,7 @@ input[type="number"]:focus {
   font-size: 28px;
   line-height: 1.28;
   margin: 10px 0 24px;
-    letter-spacing: -0.28px;
+  letter-spacing: -0.28px;
   }
   
   .basket__checkbox {
@@ -379,7 +390,7 @@ input[type="number"]:focus {
   display: flex;
   gap: 12px;
   max-width: 397px;
-    padding-top: 2px;
+  padding-top: 2px;
 }
 
 .basket__item-photo {
@@ -415,127 +426,258 @@ input[type="number"]:focus {
 .basket__item-detail_grey {
   color: #9797AF;
   margin-right: 0;
-  }
-  
-  .basket__item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .basket__item-info-price {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  
-  .basket__item-controls {}
-  
-  .basket__item-counter {
-    background-color: #fff;
-    border-radius: 8px;
-    height: 44px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .counter__minus {
-    border: none;
-    height: 24px;
-    width: 24px;
-    background-color: transparent;
-    font-size: 20px;
-    line-height: 1.2;
-    padding: 0;
-    letter-spacing: -0.2px;
-  }
-  
-  .counter__plus {
-    border: none;
-    height: 24px;
-    width: 24px;
-    background-color: transparent;
-    font-size: 20px;
-    line-height: 1.2;
-    padding: 0 0 2px 3px;
-  }
-  
-  .counter__number {
-    border: none;
-    background-color: transparent;
-    width: 44px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 0 0 1px 1px;
-    margin: 0;
-  }
-  
-  .counter__number:focus {
-    outline: 0;
-    outline-offset: 0;
-  }
-  
-  .basket__item-left {
-    color: #FF3B30;
-    font-size: 13px;
-    line-height: 1.23;
-    margin: 9px 0 0;
-  }
-  
-  .basket__item-like {
-    background: transparent url('./images/heart.svg') center no-repeat;
-    width: 20px;
-    height: 20px;
-    border: none;
-  }
-  
-  .basket__item-delete {
-    background: transparent url('./images/trash.svg') center no-repeat;
-    width: 20px;
-    height: 20px;
-    border: none;
-  }
-  
-  .basket__item-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: flex-end;
-    margin-top: 9px;
-    margin-bottom: 10px;
-  }
-  
-  .basket__item-prices {
-    display: flex;
-    width: 110px;
-    align-items: flex-end;
-    flex-direction: column;
-  }
-  
-  .basket__item-final-price {
-    font-size: 20px;
-    line-height: 1.2;
-    font-weight: 700;
-    margin: 0;
-    margin-bottom: 6px;
-  }
-  
-  .basket__item-price {
-    font-size: 13px;
-    line-height: 1.23;
-    color: #9797AF;
-    text-decoration: line-through;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.20);
-    margin: 0;
-  }
-  
-  .basket__item-final-price .small {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .basket__item-checkbox {
-    margin-top: 36.5px;
+}
+
+.basket__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.basket__item-info-price {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.basket__item-controls {}
+
+.basket__item-counter {
+  background-color: #fff;
+  border-radius: 8px;
+  height: 44px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter__minus {
+  border: none;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  font-size: 20px;
+  line-height: 1.2;
+  padding: 0;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+}
+
+.counter__plus {
+  border: none;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  font-size: 20px;
+  line-height: 1.2;
+  padding: 0 0 2px 3px;
+  cursor: pointer;
+}
+
+.counter__number {
+  border: none;
+  background-color: transparent;
+  width: 44px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0 0 1px 1px;
+  margin: 0;
+}
+
+.counter__number:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.basket__item-left {
+  color: #FF3B30;
+  font-size: 13px;
+  line-height: 1.23;
+  margin: 9px 0 0;
+}
+
+.basket__item-like {
+  background: transparent url('./images/heart.svg') center no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.basket__item-delete {
+  background: transparent url('./images/trash.svg') center no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.basket__item-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 9px;
+  margin-bottom: 10px;
+}
+
+.basket__item-prices {
+  display: flex;
+  width: 110px;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.basket__item-final-price {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+.basket__item-price {
+  font-size: 13px;
+  line-height: 1.23;
+  color: #9797AF;
+  text-decoration: line-through;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.20);
+  margin: 0;
+}
+
+.basket__item-final-price .small {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.basket__item-checkbox {
+  margin-top: 36.5px;
+}
+.basket__missing-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.basket__missing-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.basket__list-zone_missing {
+  color: #9797AF;
+  padding-top: 10px;
+}
+
+.basket__item-photo_missing {
+  filter: saturate(0);
+}
+
+.basket__missing-list {
+  margin-top: 29px;
+}
+
+.basket__item-buttons_missing {
+  margin-top: 1px;
+  margin-bottom: 87px;
+}
+
+.basket__form {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px 24px 24px;
+  margin-bottom: 16px;
+}
+
+.basket__form-name {
+  font-size: 24px;
+  line-height: 1.33;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.24px;
+  font-weight: 700;
+}
+
+.basket__form-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.basket__form-button {
+  color: #CB11AB;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.basket__form-info-item {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.basket__form-info-title {
+  max-width: 160px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 0;
+}
+
+.basket__form-address {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.basket__form-info-text {
+  font-size: 13px;
+  line-height: 1.23;
+  margin: 0;
+}
+
+.basket__form-about-shop {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.basket__form-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.basket__form-info-value {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.basket__form-delivery-photo {
+  width: 40px;
+  height: 56px;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+.basket__form-delivery-price {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.basket__form-card {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 12px 0 0;
 }
