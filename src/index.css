@@ -118,6 +118,7 @@ input[type="number"]:focus {
   padding: 0;
   width: 100%;
   margin-bottom: 2px;
+  outline: none;
 }
 
 .header__search-input::placeholder {
@@ -147,6 +148,7 @@ input[type="number"]:focus {
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .sidebar {
@@ -707,10 +709,7 @@ input[type="number"]:focus {
   padding-bottom: 3px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin: 0;
-}
-
-.basket__form-input:focus {
-  border: none;
+  outline: none;
 }
 
 .basket__form-input:focus+.basket__form-label {
