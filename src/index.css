@@ -32,9 +32,9 @@ input[type="number"]:focus {
   align-items: center;
 }
 
-.header-rounding {
+.header__rounding {
   background-color: #F6F6FA;
-  height: 24px;
+  height: 23px;
   border-radius: 24px 24px 0 0;
 }
 
@@ -157,7 +157,8 @@ input[type="number"]:focus {
   max-width: 429px;
   min-width: 303px;
   width: 100%;
-  max-height: 572px;
+  max-height: 555px;
+    padding-top: 16px;
 }
 
 .sidebar__info {
@@ -167,7 +168,6 @@ input[type="number"]:focus {
 .sidebar__total {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
   margin-bottom: 7px;
 }
 
@@ -259,8 +259,8 @@ input[type="number"]:focus {
 .sidebar__info-payment-zone {
   background-color: #F6F6FA;
   border-radius: 8px;
-  padding: 8px 8px 12px 8px;
-  margin-top: 12px;
+  padding: 8px 8px 6px 8px;
+    margin-top: 10px;
 }
 
 .sidebar__info-payment-checkbox {
@@ -289,7 +289,6 @@ input[type="number"]:focus {
 
 .sidebar__button-rules {
   display: flex;
-  margin-bottom: 18px;
 }
 
 .sidebar__info-tick {
@@ -336,9 +335,10 @@ input[type="number"]:focus {
   border-color: #CB11AB;
 }
 
-.sidebar__info-text-payment {
-  margin-top: 8px;
+.basket__form-card-text {
+  color: #9797AF;
   margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .sidebar__info-text-sogl {
@@ -349,6 +349,7 @@ input[type="number"]:focus {
   max-width: 891px;
   min-width: 640px;
   width: 100%;
+  margin-top: 2px;
 }
 
 .basket__header {
@@ -579,6 +580,7 @@ input[type="number"]:focus {
 
 .basket__missing-list {
   margin-top: 29px;
+  margin-bottom: 30px;
 }
 
 .basket__item-buttons_missing {
@@ -589,10 +591,18 @@ input[type="number"]:focus {
 .basket__form {
   background-color: #fff;
   border-radius: 16px;
-  padding: 16px 24px 24px;
+  padding: 16px 24px 21px;
   margin-bottom: 16px;
 }
+  
+.basket__form_payment {
+  padding-bottom: 24px;
+  padding-top: 17px;
+}
 
+.basket__form_user {
+  margin-bottom: 26px;
+}
 .basket__form-name {
   font-size: 24px;
   line-height: 1.33;
@@ -606,6 +616,7 @@ input[type="number"]:focus {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+  align-items: flex-end;
 }
 
 .basket__form-button {
@@ -617,6 +628,7 @@ input[type="number"]:focus {
   background-color: transparent;
   cursor: pointer;
   padding: 0;
+  padding-bottom: 1px;
 }
 
 .basket__form-info-item {
@@ -626,11 +638,11 @@ input[type="number"]:focus {
 }
 
 .basket__form-info-title {
-  max-width: 160px;
+  max-width: 154px;
   width: 100%;
   font-size: 16px;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -668,16 +680,98 @@ input[type="number"]:focus {
   height: 56px;
   border-radius: 8px;
   margin-right: 8px;
+  object-fit: cover;
+    object-position: center;
 }
 
 .basket__form-delivery-price {
   display: flex;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 20px;
 }
 
 .basket__form-card {
   font-size: 16px;
   line-height: 1.5;
   margin: 0 12px 0 0;
+}
+.basket__form-input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+
+.basket__form-input:focus {
+  border: none;
+}
+
+.basket__form-input:focus+.basket__form-label {
+  font-size: 13px;
+  line-height: 1.23;
+  top: -20px;
+}
+
+.basket__form-input:valid+.basket__form-label {
+  font-size: 13px;
+  line-height: 1.23;
+  top: -15px;
+}
+
+.basket__form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  margin: 18px 0px;
+}
+
+.basket__form-label {
+  color: #9797AF;
+  position: absolute;
+  top: 3px;
+  transition:
+    top 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.basket__form-field-line {
+  display: flex;
+  gap: 24px;
+  max-width: 700px;
+}
+
+.footer {
+  background-color: #6725A8;
+  margin: 0 auto;
+}
+
+.footer__rounding {
+  background-color: #F6F6FA;
+  height: 24px;
+  border-radius: 0 0 24px 24px;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.footer__text {
+  font-size: 13px;
+  line-height: 1.23;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.basket__form-delivery-photos {
+  display: flex;
 }
