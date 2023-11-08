@@ -26,7 +26,7 @@ input[type="number"]:focus {
 
 .header__container {
   max-width: 1400px;
-  padding: 16px 17px 16px 24px;
+  padding: 16px 24px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ input[type="number"]:focus {
   display: flex;
   gap: 16px;
   align-items: center;
-  margin-right: 32px;
+  margin-right: 28px;
 }
 
 .header__burger {
@@ -62,16 +62,17 @@ input[type="number"]:focus {
     background-size: 106px 48px;
   width: 106px;
   height: 48px;
+  margin-top: 4px;
 }
 
 .header__navbar {
-  margin-left: 33px;
+  margin-left: 28px;
 }
 
 .header__navbar-list {
   display: flex;
   list-style: none;
-  gap: 44px;
+  gap: 42px;
   margin: 0;
   padding: 0;
 }
@@ -86,11 +87,10 @@ input[type="number"]:focus {
   color: #fff;
   text-decoration: none;
   align-items: center;
+  margin-bottom: 2px;
 }
 
 .header__navbar-img {
-  height: 28px;
-  width: 28px;
   margin-bottom: 6px;
 }
 
@@ -405,7 +405,7 @@ input[type="number"]:focus {
 }
 
 .basket__list-zone {
-  /*padding-top: 9px;*/
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .basket__item-info {
@@ -453,9 +453,8 @@ input[type="number"]:focus {
 .basket__item {
   display: flex;
   justify-content: space-between;
-  padding-top: 12px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
+  padding-top: 10px;
+    margin-bottom: 9px;
 }
 
 .basket__item-info-price {
@@ -594,7 +593,6 @@ input[type="number"]:focus {
 
 .basket__list-zone_missing {
   color: #9797AF;
-  padding-top: 10px;
 }
 
 .basket__item-photo_missing {
@@ -602,8 +600,8 @@ input[type="number"]:focus {
 }
 
 .basket__missing-list {
-  margin-top: 29px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+    margin-bottom: 32px;
 }
 
 .basket__item-buttons_missing {
@@ -974,6 +972,11 @@ input[type="number"]:focus {
 
   .basket__item {
     flex-direction: column;
+    display: flex;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 16px;
   }
 
   .basket__item-size {
@@ -1101,10 +1104,7 @@ input[type="number"]:focus {
   .basket__missing-list {
     margin-top: 45px;
     padding: 0 16px;
-  }
-
-  .basket__list-zone_missing {
-    padding-top: 0;
+    margin-bottom: 30px;
   }
 
   .basket__item-info-price {
@@ -1193,8 +1193,8 @@ input[type="number"]:focus {
 
   .sidebar__info-text-payment {
     margin-top: 7px;
-  }
-
+  
+}
 }
 
 @media (max-width: 475px) {
