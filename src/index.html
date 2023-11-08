@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Товары и точка</title>
+  <title>Товары и точка — Корзина</title>
 </head>
 
 <body class="page">
@@ -12,7 +12,7 @@
     <div class="header__container">
       <div class="header__nav-element">
         <button class="header__burger" type="button"></button>
-        <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
+        <div class="header__logo"></div>
       </div>
 
 
@@ -20,11 +20,11 @@
         <form class="header__search-form" name="search-form" novalidate>
           <input class='header__search-input' type='text' name='search-input' placeholder="Я ищу..." required
             autocomplete="off" id="search-input">
-
           <button class="header__search-button" type='submit' aria-label='Поиск'></button>
         </form>
       </div>
 
+      <button class="header__search-button header__search-button_mobile" type='submit' aria-label='Поиск'></button>
       <nav class="header__navbar">
         <ul class="header__navbar-list">
           <li class="header__navbar-item">
@@ -70,17 +70,22 @@
               <div class="basket__item-info">
                 <label for="item-checkbox" class="form__label basket__item-checkbox">
                   <input type="checkbox" name="item-checkbox" id="item-checkbox" class="form__item" value="item-checkbox">
-                  <span class="form__pseudo-item form__pseudo-item_list"></span>
+                  <span class="form__pseudo-item"></span>
                 </label>
+                <p class="basket__item-size-mobile">56</p>
                 <img class="basket__item-photo" src="<%=require('./images/Frame 3853.jpg')%>" alt="img">
                 <div class="basket__item-details">
+                  <div class="basket__item-prices basket__item-prices_mobile">
+                    <p class="basket__item-final-price">522<span class="small"> сом</span></p>
+                    <p class="basket__item-price">1051 сом</p>
+                  </div>
                   <p class="basket__item-name">Футболка UZcotton мужская</p>
                   <div class="basket__item-details-line">
                     <p class="basket__item-detail">Цвет: белый</p>
-                    <p class="basket__item-detail">Размер: 56</p>
+                    <p class="basket__item-size">Размер: 56</p>
                   </div>
                   <p class="basket__item-detail basket__item-detail_grey">Коледино WB</p>
-                  <div class="basket__item-details-line">
+                  <div class="basket__item-shop-info">
                     <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
                     <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
                   </div>
@@ -89,31 +94,38 @@
 
               <div class="basket__item-info-price">
                 <div class="basket__item-controls">
-                  <div class="basket__item-counter">
-                    <button class="counter__minus">−</button>
-                    <input class="counter__number" type="number" minlength="1" maxlength="2" value="1" autocomplete="off">
-                    <button class="counter__plus">+</button>
+                  <div class="basket__item-counter-left">
+                    <div class="basket__item-counter">
+                      <button class="counter__minus">−</button>
+                      <input class="counter__number" type="number" minlength="1" maxlength="2" value="1" autocomplete="off">
+                      <button class="counter__plus">+</button>
+                    </div>
+                    <p class="basket__item-left">Осталось 2 шт.</p>
                   </div>
-                  <p class="basket__item-left">Осталось 2 шт.</p>
+
                   <div class="basket__item-buttons">
                     <button class="basket__item-like" type='button' aria-label='Лайк'></button>
                     <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
                   </div>
+                </div>
+                <div class="basket__item-prices">
+                  <p class="basket__item-final-price">522<span class="small"> сом</span></p>
+                  <p class="basket__item-price">1051 сом</p>
+                </div>
+                </div>
+                </div>
+                <div class="basket__item">
+                  <div class="basket__item-info">
+                    <label for="item-checkbox2" class="form__label basket__item-checkbox">
+                      <input type="checkbox" name="item-checkbox2" id="item-checkbox2" class="form__item" value="item-checkbox">
+                      <span class="form__pseudo-item form__pseudo-item_list"></span>
+                    </label>
+                    <img class="basket__item-photo" src="<%=require('./images/Frame 277132129.jpg')%>" alt="img">
+                    <div class="basket__item-details">
+                  <div class="basket__item-prices basket__item-prices_mobile">
+                    <p class="basket__item-final-price"><span class="small">2100047 сом</span></p>
+                    <p class="basket__item-price">2300047 сом</p>
                   </div>
-                  <div class="basket__item-prices">
-                    <p class="basket__item-final-price">522<span class="small"> сом</span></p>
-                    <p class="basket__item-price">1051 сом</p>
-                  </div>
-                  </div>
-                  </div>
-                  <div class="basket__item">
-                    <div class="basket__item-info">
-                      <label for="item-checkbox2" class="form__label basket__item-checkbox">
-                        <input type="checkbox" name="item-checkbox2" id="item-checkbox2" class="form__item" value="item-checkbox">
-                        <span class="form__pseudo-item form__pseudo-item_list"></span>
-                      </label>
-                      <img class="basket__item-photo" src="<%=require('./images/Frame 277132129.jpg')%>" alt="img">
-                      <div class="basket__item-details">
                   <p class="basket__item-name">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер
                     на Apple
                     iPhone XR, MobiSafe</p>
@@ -122,64 +134,72 @@
                     <p class="basket__item-detail"> </p>
                   </div>
                   <p class="basket__item-detail basket__item-detail_grey">Коледино WB</p>
-                  <div class="basket__item-details-line">
+                  <div class="basket__item-shop-info">
                     <p class="basket__item-detail basket__item-detail_grey">ООО Мегапрофстиль</p>
                     <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
                   </div>
                 </div>
-                </div>
-                <div class="basket__item-info-price">
-                  <div class="basket__item-controls">
+              </div>
+              <div class="basket__item-info-price">
+                <div class="basket__item-controls">
+                  <div class="basket__item-counter-left">
                     <div class="basket__item-counter">
-                      <button class="counter__minus">–</button>
+                      <button class="counter__minus">−</button>
                       <input class="counter__number" type="number" value="200" autocomplete="off">
                       <button class="counter__plus">+</button>
                     </div>
-                    <div class="basket__item-buttons">
-                      <button class="basket__item-like" type='button' aria-label='Лайк'></button>
-                      <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
-                    </div>
                   </div>
-                  <div class="basket__item-prices">
-                    <p class="basket__item-final-price"><span class="small">2 100 047 сом</span></p>
-                    <p class="basket__item-price">2 300 047 сом</p>
-                  </div>
-                </div>
-                </div>
-                <div class="basket__item">
-                  <div class="basket__item-info">
-                    <label for="item-checkbox3" class="form__label basket__item-checkbox">
-                      <input type="checkbox" name="item-checkbox3" id="item-checkbox3" class="form__item" value="item-checkbox">
-                      <span class="form__pseudo-item form__pseudo-item_list"></span>
-                    </label>
-                    <img class="basket__item-photo" src="<%=require('./images/Frame 277132129 (1).jpg')%>" alt="img">
-                    <div class="basket__item-details">
-                      <p class="basket__item-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
-                        шестигранные,<br>Faber-Castell</p>
-                      <p class="basket__item-detail basket__item-detail_grey">Коледино WB</p>
-                      <div class="basket__item-details-line">
-                        <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
-                        <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="basket__item-info-price">
-                    <div class="basket__item-controls">
-                      <div class="basket__item-counter">
-                        <button class="counter__minus">–</button>
-                    <input class="counter__number" type="number" minlength="1" maxlength="2" value="2" autocomplete="off">
-                    <button class="counter__plus">+</button>
-                  </div>
-                  <p class="basket__item-left">Осталось 2 шт.</p>
                   <div class="basket__item-buttons">
                     <button class="basket__item-like" type='button' aria-label='Лайк'></button>
                     <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
                   </div>
                   </div>
                   <div class="basket__item-prices">
+                    <p class="basket__item-final-price"><span class="small">2 100 047 сом</span></p>
+                    <p class="basket__item-price">2 300 047 сом</p>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="basket__item">
+                    <div class="basket__item-info">
+                      <label for="item-checkbox3" class="form__label basket__item-checkbox">
+                        <input type="checkbox" name="item-checkbox3" id="item-checkbox3" class="form__item" value="item-checkbox">
+                        <span class="form__pseudo-item form__pseudo-item_list"></span>
+                      </label>
+                      <img class="basket__item-photo" src="<%=require('./images/Frame 277132129 (1).jpg')%>" alt="img">
+                      <div class="basket__item-details">
+                  <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price">494<span class="small"> сом</span></p>
                     <p class="basket__item-price">950 сом</p>
                   </div>
+                  <p class="basket__item-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
+                    шестигранные,<br>Faber-Castell</p>
+                  <p class="basket__item-detail basket__item-detail_grey">Коледино WB</p>
+                  <div class="basket__item-shop-info">
+                    <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
+                    <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
+                  </div>
+                  </div>
+                  </div>
+                  <div class="basket__item-info-price">
+                    <div class="basket__item-controls">
+                  <div class="basket__item-counter-left">
+                    <div class="basket__item-counter">
+                      <button class="counter__minus">−</button>
+                      <input class="counter__number" type="number" minlength="1" maxlength="2" value="1" autocomplete="off">
+                      <button class="counter__plus">+</button>
+                      </div>
+                      <p class="basket__item-left">Осталось 2 шт.</p>
+                  </div>
+                  <div class="basket__item-buttons">
+                    <button class="basket__item-like" type='button' aria-label='Лайк'></button>
+                    <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                  </div>
+                </div>
+                <div class="basket__item-prices">
+                  <p class="basket__item-final-price">494<span class="small"> сом</span></p>
+                  <p class="basket__item-price">950 сом</p>
+                </div>
               </div>
             </div>
           </div>
@@ -193,13 +213,14 @@
           <div class="basket__list-zone basket__list-zone_missing">
             <div class="basket__item">
               <div class="basket__item-info">
+                <p class="basket__item-size-mobile">56</p>
                 <img class="basket__item-photo basket__item-photo_missing" src="<%=require('./images/Frame 3853.jpg')%>"
                   alt="img">
                 <div class="basket__item-details">
                   <p class="basket__item-name">Футболка UZcotton мужская</p>
                   <div class="basket__item-details-line">
                     <p class="basket__item-detail">Цвет: белый</p>
-                    <p class="basket__item-detail">Размер: 56</p>
+                    <p class="basket__item-size">Размер: 56</p>
                   </div>
                 </div>
               </div>
@@ -221,17 +242,15 @@
                     iPhone XR, MobiSafe</p>
                   <div class="basket__item-details-line">
                     <p class="basket__item-detail">Цвет: прозрачный</p>
-                    <p class="basket__item-detail"> </p>
+                    <p class="basket__item-size"> </p>
                   </div>
                 </div>
               </div>
               <div class="basket__item-info-price">
-                <div class="basket__item-controls">
                   <div class="basket__item-buttons basket__item-buttons_missing">
                     <button class="basket__item-like" type='button' aria-label='Лайк'></button>
                     <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
                   </div>
-                </div>
                 <div class="basket__item-prices"></div>
               </div>
             </div>
@@ -245,12 +264,10 @@
                 </div>
               </div>
               <div class="basket__item-info-price">
-                <div class="basket__item-controls">
                   <div class="basket__item-buttons basket__item-buttons_missing">
                     <button class="basket__item-like" type='button' aria-label='Лайк'></button>
                     <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
                   </div>
-                </div>
                 <div class="basket__item-prices"></div>
               </div>
             </div>
@@ -295,7 +312,7 @@
             </div>
             <div class="basket__form-delivery-price">
               <img class="sidebar__info-tick-price" src="<%=require('./images/shipping.svg')%>" alt="Галочка зеленая">
-              <p class="sidebar__info-text">Обратная доставка товаров на склад при отказе — <span
+              <p class="basket__info-text">Обратная доставка товаров на склад при отказе — <span
                   class="sidebar__info-text sidebar__info-text_free">бесплатно</span></p>
             </div>
           </div>
@@ -303,9 +320,9 @@
         <div class="basket__form basket__form_payment">
           <div class="basket__form-header">
             <h2 class="basket__form-name">Способ оплаты</h2>
-            <button class="basket__form-button" type="basket__form-edit">Изменить</button>
+            <button class="basket__form-button" type="button">Изменить</button>
           </div>
-          <div class="sidebar__card">
+          <div class="basket__card">
             <img class="sidebar__info-payment-img" src="<%=require('./images/mirlogo.svg')%>" alt="MIR">
             <p class="basket__form-card">1234 56•• •••• 1234</p>
             <p class="basket__form-card">01/30</p>
@@ -320,33 +337,34 @@
             <label class="basket__form-field">
               <input class="basket__form-input" type="text" name="name" required autocomplete="off" id="name-input">
               <span class="basket__form-label">Имя</span>
-              <span className="basket__form-input-error name-input-error"></span>
+              <span class="basket__form-input-error name-input-error"></span>
             </label>
-          
+
             <label class="basket__form-field">
               <input class="basket__form-input" type="text" name="surname" required autocomplete="off" id="surname-input">
               <span class="basket__form-label">Фамилия</span>
-              <span className="basket__form-input-error surname-input-error"></span>
+              <span class="basket__form-input-error surname-input-error"></span>
             </label>
           </div>
-          
+
           <div class="basket__form-field-line">
             <label class="basket__form-field">
               <input class="basket__form-input" type="email" name="email" required autocomplete="off" id="email-input">
               <span class="basket__form-label">Почта</span>
-              <span className="basket__form-input-error email-input-error"></span>
+              <span class="basket__form-input-error email-input-error"></span>
             </label>
-          
+
             <label class="basket__form-field">
               <input class="basket__form-input" type="tel" name="tel" required autocomplete="off" id="phone-input">
               <span class="basket__form-label">Телефон</span>
-              <span className="basket__form-input-error phone-input-error"></span>
+              <span class="basket__form-input-error phone-input-error"></span>
             </label>
-          
+
             <label class="basket__form-field">
               <input class="basket__form-input" type='text' name="tin" required autocomplete="off" id="tin-input">
               <span class="basket__form-label">ИНН</span>
-              <span className="basket__form-input-error tin-input-error"></span>
+              <span class="basket__form-label-tin">Для таможенного оформления</span>
+              <span class="basket__form-input-error tin-input-error"></span>
             </label>
           </div>
         </div>
@@ -377,8 +395,8 @@
             <p class="sidebar__info-header">Доставка в пункт выдачи</p>
             <button class="sidebar__info-edit-button"></button>
           </div>
-          <p class="sidebar__info-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
-          <p class="sidebar__info-text sidebar__info-text_date">5−8 фев</p>
+          <p class="sidebar__info-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+          <p class="sidebar__info-date">5−8 фев</p>
           <div class="sidebar__info-price-zone">
             <img class="sidebar__info-tick-price" src="<%=require('./images/shipping.svg')%>" alt="Галочка зеленая">
             <p class="sidebar__info-text">Обратная доставка товаров на склад при отказе — <span
@@ -414,15 +432,15 @@
             </p>
           </div>
         </div>
-        </section>
+      </section>
     </div>
   </main>
-<footer class="footer">
-  <div class="footer__rounding"></div>
-  <div class="footer__container">
-    <p class="footer__text">© 2022 ООО «Товары и точка»</p>
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="footer__rounding"></div>
+    <div class="footer__container">
+      <p class="footer__text">© 2022 ООО «Товары и точка»</p>
+      </div>
+      </footer>
 </body>
 
 </html>
