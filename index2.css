@@ -372,6 +372,14 @@
     margin-left: 0;
   }
 
+  .popup {
+    display: none;
+  }
+
+  .popup_opened {
+    display: flex;
+  }
+
   .popup__button {
     width: 100%;
   }

@@ -10,6 +10,14 @@ input[type="number"]:focus {
   -moz-appearance: textfield;
 }
 
+html {
+  overflow: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .page {
   background-color: #F6F6FA;
   min-width: 320px;
@@ -762,6 +770,11 @@ input[type="number"]:focus {
   outline: none;
 }
 
+.basket__form-input_error {
+  border-bottom: 1px solid #F55123;
+  color: #F55123;
+}
+
 .basket__form-input:focus+.basket__form-label {
   font-size: 13px;
   line-height: 1.23;
@@ -968,6 +981,8 @@ input[type="number"]:focus {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s, opacity 0.3s;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .popup__container {
@@ -981,6 +996,7 @@ input[type="number"]:focus {
   justify-content: space-between;
   flex-direction: column;
   margin: auto;
+  box-sizing: border-box;
 }
 
 .popup__container_payment {
@@ -996,6 +1012,7 @@ input[type="number"]:focus {
   visibility: visible;
   opacity: 1;
   transition: visibility 0.1s, opacity 0.3s;
+  display: flex;
 }
 
 .popup_payment {}
@@ -1184,4 +1201,10 @@ input[type="number"]:focus {
 .hidden-missing-list {
   margin-bottom: 40px;
   margin-top: 16px
+}
+
+.basket__form-input-error {
+  font-size: 12px;
+  line-height: 1.17;
+  color: #F55123;
 }

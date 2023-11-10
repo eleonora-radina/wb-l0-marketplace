@@ -380,7 +380,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="basket__form basket__form_payment">
           <div class="basket__form-header">
             <h2 class="basket__form-name">Способ оплаты</h2>
@@ -394,45 +394,49 @@
           <p class="sidebar__info-text basket__form-card-text">Спишем оплату с карты при получении</p>
         </div>
 
-        <div class="basket__form basket__form_user">
+        <div class="basket__form basket__form_user" id="form_user">
           <div class="basket__form-header">
             <h2 class="basket__form-name">Получатель</h2>
           </div>
-          <div class="basket__form-field-line">
-            <label class="basket__form-field">
-              <input class="basket__form-input" type="text" name="name" required autocomplete="off" id="name-input">
-              <span class="basket__form-label">Имя</span>
-              <span class="basket__form-input-error name-input-error"></span>
-            </label>
+          <form class="basket__form-user">
+            <div class="basket__form-field-line">
+              <label class="basket__form-field">
+                <input class="basket__form-input" type="text" name="name" required autocomplete="off" id="name-input">
+                <span class="basket__form-label">Имя</span>
+                <span class="basket__form-input-error name-input-error"></span>
+              </label>
 
-            <label class="basket__form-field">
-              <input class="basket__form-input" type="text" name="surname" required autocomplete="off"
-                id="surname-input">
-              <span class="basket__form-label">Фамилия</span>
-              <span class="basket__form-input-error surname-input-error"></span>
-            </label>
-          </div>
+              <label class="basket__form-field">
+                <input class="basket__form-input" type="text" name="surname" required autocomplete="off"
+                  id="surname-input">
+                <span class="basket__form-label">Фамилия</span>
+                <span class="basket__form-input-error surname-input-error"></span>
+              </label>
+            </div>
 
-          <div class="basket__form-field-line">
-            <label class="basket__form-field">
-              <input class="basket__form-input" type="email" name="email" required autocomplete="off" id="email-input">
-              <span class="basket__form-label">Почта</span>
-              <span class="basket__form-input-error email-input-error"></span>
-            </label>
+            <div class="basket__form-field-line">
+              <label class="basket__form-field">
+                <input class="basket__form-input" type="text" name="email" required autocomplete="off" id="email-input">
+                <span class="basket__form-label">Почта</span>
+                <span class="basket__form-input-error email-input-error"></span>
+              </label>
 
-            <label class="basket__form-field">
-              <input class="basket__form-input" type="tel" name="tel" required autocomplete="off" id="phone-input">
-              <span class="basket__form-label">Телефон</span>
-              <span class="basket__form-input-error phone-input-error"></span>
-            </label>
+              <label class="basket__form-field">
+                <input class="basket__form-input" type="text" name="tel" required autocomplete="off" id="phone-input"
+                  maxlength="30">
+                <span class="basket__form-label">Телефон</span>
+                <span class="basket__form-input-error phone-input-error"></span>
+              </label>
 
-            <label class="basket__form-field">
-              <input class="basket__form-input" type='text' name="tin" required autocomplete="off" id="tin-input">
-              <span class="basket__form-label">ИНН</span>
-              <span class="basket__form-label-tin">Для таможенного оформления</span>
-              <span class="basket__form-input-error tin-input-error"></span>
-            </label>
-          </div>
+              <label class="basket__form-field">
+                <input class="basket__form-input" type='text' name="tin" required autocomplete="off" id="tin-input"
+                  maxlength="14">
+                <span class="basket__form-label">ИНН</span>
+                <span class="basket__form-label-tin">Для таможенного оформления</span>
+                <span class="basket__form-input-error tin-input-error"></span>
+              </label>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -578,22 +582,22 @@
               <p class="popup__form-address">Бишкек, улица Жукеева-Пудовкина, 77/1</p>
               <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
             </label>
-            </div>
-            
-            <div class="popup__form-radio">
-              <input id="mir" type="radio" name="radio" value="1" checked>
-              <label class="popup__address-label" for="mir">
-                <p class="popup__form-address">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
-                <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
-              </label>
-            </div>
-            </div>
-            
-            <div class="popup__delivery-addresses popup__delivery-addresses_shop">
-              <p class="popup__delivery-addresses-title">Мои адреса</p>
-              <div class="popup__form-radio">
-                <input id="mir" type="radio" name="radio" value="1" checked>
-                <label class="popup__address-label" for="mir">
+          </div>
+
+          <div class="popup__form-radio">
+            <input id="mir" type="radio" name="radio" value="1" checked>
+            <label class="popup__address-label" for="mir">
+              <p class="popup__form-address">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
+              <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
+            </label>
+          </div>
+        </div>
+
+        <div class="popup__delivery-addresses popup__delivery-addresses_shop">
+          <p class="popup__delivery-addresses-title">Мои адреса</p>
+          <div class="popup__form-radio">
+            <input id="mir" type="radio" name="radio" value="1" checked>
+            <label class="popup__address-label" for="mir">
               <div class="basket__form-info-value">
                 <p class="popup__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
                 <div class="basket__form-about-shop">
@@ -638,16 +642,18 @@
                 </div>
               </div>
               <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
-              </label>
-              </div>
+            </label>
+          </div>
         </div>
 
         <button class="popup__button popup__button_delivery">Выбрать</button>
       </div>
-      </div>
-      </div>
+    </div>
+  </div>
 
-  <script src="index.js" type="text/javascript"></script>
+  <script src="./js/accordion.js" type="text/javascript"></script>
+  <script src="./js/popups.js" type="text/javascript"></script>
+  <script src="./js/validator.js" type="text/javascript"></script>
 </body>
 
 </html>
