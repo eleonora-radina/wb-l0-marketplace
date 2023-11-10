@@ -203,7 +203,7 @@ input[type="number"]:focus {
   align-items: center;
 }
 
-.sidebar__info-header {
+.sidebar__info-title {
   margin: 0;
   font-size: 16px;
   line-height: 1.5;
@@ -381,7 +381,7 @@ input[type="number"]:focus {
   width: calc(100% - 429px - 32px);
 }
 
-.basket__header {
+.basket__title {
   font-size: 28px;
   line-height: 1.28;
   margin: 10px 0 24px;
@@ -924,7 +924,7 @@ input[type="number"]:focus {
   opacity: 1;
 }
 
-.tooltip__header {
+.tooltip__title {
   font-size: 13px;
   line-height: 1.23;
   font-weight: 700;
@@ -952,4 +952,101 @@ input[type="number"]:focus {
 
 .sidebar__info-text_mobile {
   display: none;
+}
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.popup__container {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  position: relative;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: auto;
+}
+
+.popup__container_payment {
+  width: 400px;
+  height: 408px;
+}
+
+.popup__container_delivery {}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.popup_payment {}
+
+.popup__button-exit {
+  position: absolute;
+  top: 20px;
+  right: 13px;
+  background: transparent url('./images/exit.svg') center no-repeat;
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.popup__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  margin: 0;
+  margin-bottom: 13px;
+}
+
+.popup__payment-label {
+  display: flex;
+  gap: 4px;
+}
+
+.popup__payment-logo {}
+
+.popup__payment-number {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.form_radio {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.popup__button {
+  background-color: #CB11AB;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  width: 164px;
+  height: 44px;
+  margin: 0;
+  margin-bottom: 8px;
+  cursor: pointer;
 }

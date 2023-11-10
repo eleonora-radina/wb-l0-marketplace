@@ -51,7 +51,7 @@
   <main class="main">
     <div class="content">
       <section class="basket__content">
-        <h1 class="basket__header">Корзина</h1>
+        <h1 class="basket__title">Корзина</h1>
         <div class="basket__list">
           <div class="basket__list-header">
             <label for="all-available-checkbox" class="form__label">
@@ -88,7 +88,7 @@
                     <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
                     <img class="basket__info-icon" src="./images/info.svg" alt="info">
                     <div class="tooltip tooltip_shop-info">
-                      <p class="tooltip__header">OOO «ВАЙЛДБЕРРИЗ»</p>
+                      <p class="tooltip__title">OOO «ВАЙЛДБЕРРИЗ»</p>
                       <p class="tooltip__text">ОГРН: 1067746062449</p>
                       <p class="tooltip__text">142181, Московская область, г.о. Подольск, д Коледино, тер.
                         Индустриальный Парк Коледино, д.
@@ -156,7 +156,7 @@
                     <p class="basket__item-detail basket__item-detail_grey">ООО Мегапрофстиль</p>
                     <img class="basket__info-icon" src="./images/info.svg" alt="info">
                     <div class="tooltip tooltip_shop-info">
-                      <p class="tooltip__header">OOO «МЕГАПРОФСТИЛЬ»</p>
+                      <p class="tooltip__title">OOO «МЕГАПРОФСТИЛЬ»</p>
                       <p class="tooltip__text">ОГРН: 5167746237148</p>
                       <p class="tooltip__text">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2,
                         офис 34</p>
@@ -214,7 +214,7 @@
                     <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
                     <img class="basket__info-icon" src="./images/info.svg" alt="info">
                     <div class="tooltip tooltip_shop-info">
-                      <p class="tooltip__header">OOO «ВАЙЛДБЕРРИЗ»</p>
+                      <p class="tooltip__title">OOO «ВАЙЛДБЕРРИЗ»</p>
                       <p class="tooltip__text">ОГРН: 1067746062449</p>
                       <p class="tooltip__text">142181, Московская область, г.о. Подольск, д Коледино, тер.
                         Индустриальный Парк Коледино, д.
@@ -452,7 +452,7 @@
 
         <div class="sidebar__info">
           <div class="sidebar__info-header-zone">
-            <p class="sidebar__info-header">Доставка в пункт выдачи</p>
+            <p class="sidebar__info-title">Доставка в пункт выдачи</p>
             <button class="sidebar__info-edit-button"></button>
           </div>
           <p class="sidebar__info-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
@@ -470,7 +470,7 @@
 
         <div class="sidebar__info">
           <div class="sidebar__info-header-zone">
-            <p class="sidebar__info-header">Оплата картой</p>
+            <p class="sidebar__info-title">Оплата картой</p>
             <button class="sidebar__info-edit-button"></button>
           </div>
           <div class="sidebar__card">
@@ -506,6 +506,140 @@
       <p class="footer__text">© 2022 ООО «Товары и точка»</p>
     </div>
   </footer>
+
+  <div class="popup">
+    <div class="popup__container popup__container_payment">
+      <button class="popup__button-exit"></button>
+      <div class="popup__content">
+        <p class="popup__title">Способ оплаты</p>
+        <div class="form_radio">
+          <input id="mir" type="radio" name="radio" value="1" checked>
+          <label class="popup__payment-label" for="mir">
+            <img class="popup__payment-logo" src="./images/mirlogo.svg" alt="MIR">
+            <p class="popup__payment-number">1234 56•• •••• 1234</p>
+          </label>
+        </div>
+  
+        <div class="form_radio">
+          <input id="visa" type="radio" name="radio" value="2">
+          <label class="popup__payment-label" for="visa">
+            <img class="popup__payment-logo" src="./images/visa.svg" alt="MIR">
+            <p class="popup__payment-number">1234 56•• •••• 1234</p>
+        </div>
+  
+        <div class="form_radio">
+          <input id="mastercard" type="radio" name="radio" value="3">
+          <label class="popup__payment-label" for="mastercard">
+            <img class="popup__payment-logo" src="./images/mastercard.svg" alt="MIR">
+            <p class="popup__payment-number">1234 56•• •••• 1234</p>
+        </div>
+  
+        <div class="form_radio">
+          <input id="maestro" type="radio" name="radio" value="4">
+          <label class="popup__payment-label" for="maestro">
+            <img class="popup__payment-logo" src="./images/maestro.svg" alt="MIR">
+            <p class="popup__payment-number">1234 56•• •••• 1234</p>
+        </div>
+      </div>
+  
+      <button class="popup__button">Выбрать</button>
+    </div>
+  </div>
+  
+  <div class="popup">
+    <div class="popup__container popup__container_delivery">
+      <button class="popup__button-exit"></button>
+      <div class="popup__content">
+        <p class="popup__title">Способ оплаты</p>
+        <div class="popup__delivery-types">
+          <button class="popup__delivery-type popup__delivery-type_shop">В пункт выдачи</button>
+          <button class="popup__delivery-type popup__delivery-type_courier">Курьером</button>
+        </div>
+  
+        <div class="popup__delivery-addresses popup__delivery-addresses_shop">
+          <p class="popup__delivery-addresses-title">Мои адреса</p>
+  
+          <div class="form_radio">
+            <input id="mir" type="radio" name="radio" value="1" checked>
+            <label class="popup__payment-label" for="mir">
+              <div class="basket__form-info-value">
+                <p class="basket__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
+                <div class="basket__form-about-shop">
+                  <div class="basket__form-rating">
+                    <img class="basket__form-icon-star" src="./images/Stars.svg" alt="Рейтинг">
+                  </div>
+                  <p class="basket__form-info-text">Пункт выдачи</p>
+                </div>
+              </div>
+  
+              <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+            </label>
+          </div>
+  
+          <div class="form_radio">
+            <input id="visa" type="radio" name="radio" value="2">
+            <label class="popup__payment-label" for="visa">
+              <div class="basket__form-info-value">
+                <p class="basket__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
+                <div class="basket__form-about-shop">
+                  <div class="basket__form-rating">
+                    <img class="basket__form-icon-star" src="./images/Stars.svg" alt="Рейтинг">
+                    <p class="basket__form-info-text">4.99</p>
+                  </div>
+                  <p class="basket__form-info-text">Пункт выдачи</p>
+                </div>
+              </div><button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+            </label>
+          </div>
+  
+          <div class="form_radio">
+            <input id="mastercard" type="radio" name="radio" value="3">
+            <label class="popup__payment-label" for="mastercard">
+              <div class="basket__form-info-value">
+                <p class="basket__form-address">г. Бишкек, улица Табышалиева, д. 57</p>
+                <div class="basket__form-about-shop">
+                  <div class="basket__form-rating">
+                    <img class="basket__form-icon-star" src="./images/Stars.svg" alt="Рейтинг">
+                    <p class="basket__form-info-text">4.99</p>
+                  </div>
+                  <p class="basket__form-info-text">Пункт выдачи</p>
+                </div>
+              </div>
+  
+              <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+            </label>
+          </div>
+  
+          <div class="popup__delivery-addresses popup__delivery-addresses_courier">
+            <p class="popup__delivery-addresses-title">Мои адреса</p>
+            <div class="form_radio">
+              <input id="mir" type="radio" name="radio" value="1" checked>
+              <label class="popup__payment-label" for="mir">
+                <p class="popup__payment-number">Бишкек, улица Табышалиева, 57</p>
+                <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+              </label>
+            </div>
+  
+            <div class="form_radio">
+              <input id="mir" type="radio" name="radio" value="1" checked>
+              <label class="popup__payment-label" for="mir">
+                <p class="popup__payment-number">Бишкек, улица Жукеева-Пудовкина, 77/1</p>
+                <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+              </label>
+            </div>
+  
+            <div class="form_radio">
+              <input id="mir" type="radio" name="radio" value="1" checked>
+              <label class="popup__payment-label" for="mir">
+                <p class="popup__payment-number">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
+                <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+              </label>
+            </div>
+  
+          </div>
+          <button class="popup__button">Выбрать</button>
+        </div>
+      </div>
 
 </body>
 
