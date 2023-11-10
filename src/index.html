@@ -85,6 +85,12 @@
                   <div class="basket__item-shop-info">
                     <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
                     <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
+                    <div class="tooltip tooltip_shop-info">
+                      <p class="tooltip__header">OOO «ВАЙЛДБЕРРИЗ»</p>
+                      <p class="tooltip__text">ОГРН: 1067746062449</p>
+                      <p class="tooltip__text">142181, Московская область, г.о. Подольск, д Коледино, тер. Индустриальный Парк Коледино, д.
+                        6, стр. 1</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -101,24 +107,34 @@
                   </div>
 
                   <div class="basket__item-buttons">
-                    <button class="basket__item-like" type='button' aria-label='Лайк'></button>
-                    <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                    <button class="basket__button-like" type='button' aria-label='Лайк'></button>
+                    <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
                   </div>
                 </div>
                 <div class="basket__item-prices">
                   <p class="basket__item-final-price">522<span class="small"> сом</span></p>
                   <p class="basket__item-price">1051 сом</p>
+                  <div class="tooltip tooltip_price-info">
+                    <div class="tooltip__sale">
+                      <p class="tooltip__text tooltip__text_sale-name">Скидка 55%</p>
+                      <p class="tooltip__text">−300 сом</p>
+                    </div>
+                    <div class="tooltip__sale">
+                      <p class="tooltip__text tooltip__text_sale-name">Скидка покупателя 10%</p>
+                      <p class="tooltip__text">−30 сом</p>
+                    </div>
+                  </div>
                 </div>
-                </div>
-                </div>
-                <div class="basket__item">
-                  <div class="basket__item-info">
-                    <label for="item-checkbox2" class="form__label basket__item-checkbox">
-                      <input type="checkbox" name="item-checkbox2" id="item-checkbox2" class="form__item" value="item-checkbox">
-                      <span class="form__pseudo-item form__pseudo-item_list"></span>
-                    </label>
-                    <img class="basket__item-photo" src="<%=require('./images/Frame 277132129.jpg')%>" alt="img">
-                    <div class="basket__item-details">
+              </div>
+              </div>
+              <div class="basket__item">
+                <div class="basket__item-info">
+                  <label for="item-checkbox2" class="form__label basket__item-checkbox">
+                    <input type="checkbox" name="item-checkbox2" id="item-checkbox2" class="form__item" value="item-checkbox">
+                    <span class="form__pseudo-item form__pseudo-item_list"></span>
+                  </label>
+                  <img class="basket__item-photo" src="<%=require('./images/Frame 277132129.jpg')%>" alt="img">
+                  <div class="basket__item-details">
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price"><span class="small">2100047 сом</span></p>
                     <p class="basket__item-price">2300047 сом</p>
@@ -134,6 +150,11 @@
                   <div class="basket__item-shop-info">
                     <p class="basket__item-detail basket__item-detail_grey">ООО Мегапрофстиль</p>
                     <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
+                    <div class="tooltip tooltip_shop-info">
+                      <p class="tooltip__header">OOO «МЕГАПРОФСТИЛЬ»</p>
+                      <p class="tooltip__text">ОГРН: 5167746237148</p>
+                      <p class="tooltip__text">129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -147,24 +168,34 @@
                     </div>
                   </div>
                   <div class="basket__item-buttons">
-                    <button class="basket__item-like" type='button' aria-label='Лайк'></button>
-                    <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                    <button class="basket__button-like" type='button' aria-label='Лайк'></button>
+                    <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
                   </div>
+                </div>
+                <div class="basket__item-prices">
+                  <p class="basket__item-final-price"><span class="small">2 100 047 сом</span></p>
+                  <p class="basket__item-price">2 300 047 сом</p>
+                  <div class="tooltip tooltip_price-info">
+                    <div class="tooltip__sale">
+                      <p class="tooltip__text tooltip__text_sale-name">Скидка 55%</p>
+                      <p class="tooltip__text">−300 сом</p>
+                    </div>
+                    <div class="tooltip__sale">
+                      <p class="tooltip__text tooltip__text_sale-name">Скидка покупателя 10%</p>
+                      <p class="tooltip__text">−30 сом</p>
+                    </div>
                   </div>
-                  <div class="basket__item-prices">
-                    <p class="basket__item-final-price"><span class="small">2 100 047 сом</span></p>
-                    <p class="basket__item-price">2 300 047 сом</p>
-                  </div>
-                  </div>
-                  </div>
-                  <div class="basket__item">
-                    <div class="basket__item-info">
-                      <label for="item-checkbox3" class="form__label basket__item-checkbox">
-                        <input type="checkbox" name="item-checkbox3" id="item-checkbox3" class="form__item" value="item-checkbox">
-                        <span class="form__pseudo-item form__pseudo-item_list"></span>
-                      </label>
-                      <img class="basket__item-photo" src="<%=require('./images/Frame 277132129 (1).jpg')%>" alt="img">
-                      <div class="basket__item-details">
+                </div>
+                </div>
+                </div>
+                <div class="basket__item">
+                  <div class="basket__item-info">
+                    <label for="item-checkbox3" class="form__label basket__item-checkbox">
+                      <input type="checkbox" name="item-checkbox3" id="item-checkbox3" class="form__item" value="item-checkbox">
+                      <span class="form__pseudo-item form__pseudo-item_list"></span>
+                    </label>
+                    <img class="basket__item-photo" src="<%=require('./images/Frame 277132129 (1).jpg')%>" alt="img">
+                    <div class="basket__item-details">
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price">494<span class="small"> сом</span></p>
                     <p class="basket__item-price">950 сом</p>
@@ -175,27 +206,43 @@
                   <div class="basket__item-shop-info">
                     <p class="basket__item-detail basket__item-detail_grey">ООО Вайлдберриз</p>
                     <img class="basket__info-icon" src="<%=require('./images/info.svg')%>" alt="info">
+                    <div class="tooltip tooltip_shop-info">
+                      <p class="tooltip__header">OOO «ВАЙЛДБЕРРИЗ»</p>
+                      <p class="tooltip__text">ОГРН: 1067746062449</p>
+                      <p class="tooltip__text">142181, Московская область, г.о. Подольск, д Коледино, тер. Индустриальный Парк Коледино, д.
+                        6, стр. 1</p>
+                    </div>
                   </div>
-                  </div>
-                  </div>
-                  <div class="basket__item-info-price">
-                    <div class="basket__item-controls">
+                </div>
+                </div>
+                <div class="basket__item-info-price">
+                  <div class="basket__item-controls">
                   <div class="basket__item-counter-left">
                     <div class="basket__item-counter">
                       <button class="counter__minus">−</button>
                       <input class="counter__number" type="number" minlength="1" maxlength="2" value="1" autocomplete="off">
                       <button class="counter__plus">+</button>
-                      </div>
-                      <p class="basket__item-left">Осталось 2 шт.</p>
+                    </div>
+                    <p class="basket__item-left">Осталось 2 шт.</p>
                   </div>
                   <div class="basket__item-buttons">
-                    <button class="basket__item-like" type='button' aria-label='Лайк'></button>
-                    <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                    <button class="basket__button-like" type='button' aria-label='Лайк'></button>
+                    <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
                   </div>
                 </div>
                 <div class="basket__item-prices">
                   <p class="basket__item-final-price">494<span class="small"> сом</span></p>
                   <p class="basket__item-price">950 сом</p>
+                  <div class="tooltip tooltip_price-info">
+                    <div class="tooltip__sale">
+                      <p class="tooltip__text tooltip__text_sale-name">Скидка 55%</p>
+                      <p class="tooltip__text">−300 сом</p>
+                    </div>
+                    <div class="tooltip__sale">
+                      <p class="tooltip__text tooltip__text_sale-name">Скидка покупателя 10%</p>
+                      <p class="tooltip__text">−30 сом</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -223,8 +270,8 @@
               </div>
               <div class="basket__item-info-price">
                 <div class="basket__item-buttons basket__item-buttons_missing">
-                  <button class="basket__item-like" type='button' aria-label='Лайк'></button>
-                  <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                  <button class="basket__button-like" type='button' aria-label='Лайк'></button>
+                  <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
                 </div>
                 <div class="basket__item-prices"></div>
               </div>
@@ -244,9 +291,9 @@
                 </div>
               </div>
               <div class="basket__item-info-price">
-                  <div class="basket__item-buttons basket__item-buttons_missing">
-                    <button class="basket__item-like" type='button' aria-label='Лайк'></button>
-                    <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                <div class="basket__item-buttons basket__item-buttons_missing">
+                  <button class="basket__button-like" type='button' aria-label='Лайк'></button>
+                  <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
                   </div>
                 <div class="basket__item-prices"></div>
               </div>
@@ -261,9 +308,9 @@
                 </div>
               </div>
               <div class="basket__item-info-price">
-                  <div class="basket__item-buttons basket__item-buttons_missing">
-                    <button class="basket__item-like" type='button' aria-label='Лайк'></button>
-                    <button class="basket__item-delete" type='button' aria-label='Корзина'></button>
+                <div class="basket__item-buttons basket__item-buttons_missing">
+                  <button class="basket__button-like" type='button' aria-label='Лайк'></button>
+                  <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
                   </div>
                 <div class="basket__item-prices"></div>
               </div>
@@ -307,10 +354,17 @@
                 <img class="basket__form-delivery-photo" src="<%=require('./images/Frame 277132129.jpg')%>" alt="img">
               </div>
             </div>
+
+
             <div class="basket__form-delivery-price">
               <img class="sidebar__info-tick-price" src="<%=require('./images/shipping.svg')%>" alt="Галочка зеленая">
-              <p class="basket__info-text">Обратная доставка товаров на склад при отказе — <span
-                  class="sidebar__info-text sidebar__info-text_free">бесплатно</span></p>
+              <p class="basket__info-text">Обратная доставка товаров на склад при отказе —&nbsp
+                <span class="sidebar__info-text_mobile">бесплатно</span>
+              </p>
+              <span class="sidebar__info-text basket__info-text_free"> бесплатно</span>
+              <div class="tooltip tooltip_free-delivery">
+                <p class="tooltip__text">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</p>
+              </div>
             </div>
           </div>
         </div>
@@ -394,10 +448,14 @@
           </div>
           <p class="sidebar__info-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
           <p class="sidebar__info-date">5−8 фев</p>
+          
           <div class="sidebar__info-price-zone">
             <img class="sidebar__info-tick-price" src="<%=require('./images/shipping.svg')%>" alt="Галочка зеленая">
             <p class="sidebar__info-text">Обратная доставка товаров на склад при отказе — <span
                 class="sidebar__info-text sidebar__info-text_free">бесплатно</span></p>
+            <div class="tooltip tooltip_sidebar-free-delivery">
+              <p class="tooltip__text">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</p>
+            </div>
           </div>
         </div>
 
@@ -432,12 +490,14 @@
       </section>
     </div>
   </main>
+
   <footer class="footer">
     <div class="footer__rounding"></div>
     <div class="footer__container">
       <p class="footer__text">© 2022 ООО «Товары и точка»</p>
-      </div>
-      </footer>
+    </div>
+    </footer>
+
 </body>
 
 </html>
