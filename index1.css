@@ -405,6 +405,7 @@ input[type="number"]:focus {
 
 .basket__list-icon {
   margin-top: 3px;
+  cursor: pointer;
 }
 
 .form__pseudo-item_list {
@@ -963,8 +964,8 @@ input[type="number"]:focus {
   bottom: 0;
   right: 0;
   left: 0;
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden;
+    opacity: 0;
   transition: visibility 0.5s, opacity 0.5s linear;
 }
 
@@ -986,7 +987,9 @@ input[type="number"]:focus {
   height: 408px;
 }
 
-.popup__container_delivery {}
+.popup__container_delivery {
+  width: 500px;
+}
 
 .popup_opened {
   visibility: visible;
@@ -999,7 +1002,7 @@ input[type="number"]:focus {
 .popup__button-exit {
   position: absolute;
   top: 20px;
-  right: 13px;
+  right: 18px;
   background: transparent url('./images/exit.svg') center no-repeat;
   background-size: 24px 24px;
   width: 24px;
@@ -1049,4 +1052,134 @@ input[type="number"]:focus {
   margin: 0;
   margin-bottom: 8px;
   cursor: pointer;
+}
+.popup__delivery-types-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.popup__delivery-button {
+  border-radius: 20px;
+  background-color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.23;
+  border: 2px solid rgba(203, 17, 171);
+  box-sizing: border-box;
+  height: 36px;
+  width: 100%;
+}
+
+.popup__delivery-button_shop {}
+
+.popup__delivery-button_courier {}
+
+.popup__delivery-addresses {
+  margin-top: 24px;
+}
+
+.popup__delivery-addresses-title {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.23;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.popup__button-delete {
+  background: transparent url('./images/trashgrey.svg') center no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2px;
+}
+
+.popup__button-delete:hover {
+  background: transparent url('./images/trashactive.svg') center no-repeat;
+}
+
+.popup__form-address {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  width: 400px;
+}
+
+.popup__address-label {
+  display: flex;
+  align-items: flex-start;
+}
+
+.popup__form-radio {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.popup__form-radio input {
+  margin-top: 7px;
+}
+
+.popup__button_delivery {
+  margin-top: 35px;
+}
+
+
+.container {}
+
+.container-label {
+  cursor: pointer;
+}
+
+.container_active {
+  height: 0;
+  overflow: hidden;
+}
+
+.container-content {
+  overflow: visible;
+}
+
+.hidden {
+  display: none;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+.rotated {
+  transform: rotate(-180deg);
+}
+
+.basket__list-header-items {
+  display: flex;
+}
+
+.basket__list-header-number {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 0;
+}
+
+.basket__list-header-price {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 0;
+}
+
+.line {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hidden-missing-list {
+  margin-bottom: 40px;
+  margin-top: 16px
 }

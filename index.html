@@ -42,9 +42,7 @@
           </li>
         </ul>
       </nav>
-
     </div>
-
     <div class="header__rounding"></div>
   </header>
 
@@ -60,6 +58,10 @@
               <span class="form__pseudo-item form__pseudo-item_list"></span>
               <span class="form__label-text basket__checkbox">Выбрать все</span>
             </label>
+            <div class="basket__list-header-items hidden">
+              <p class="basket__list-header-number">266 товаров ·</p>
+              <p class="basket__list-header-price">&nbsp2 100 569 сом</p>
+            </div>
             <img class="basket__list-icon" src="./images/accordion.svg" alt="accordion">
           </div>
 
@@ -257,10 +259,11 @@
             </div>
           </div>
         </div>
+
         <div class="basket__missing-list">
           <div class="basket__missing-header">
             <p class="basket__missing-text">Отсутствуют · 3 товара</p>
-            <img class="basket__list-icon" src="./images/accordion.svg" alt="accordion">
+            <img class="basket__list-icon basket__list-icon_missing" src="./images/accordion.svg" alt="accordion">
           </div>
 
           <div class="basket__list-zone basket__list-zone_missing">
@@ -325,6 +328,7 @@
             </div>
           </div>
         </div>
+
         <div class="basket__form basket__form_delivery">
           <div class="basket__form-header">
             <h2 class="basket__form-name">Способ доставки</h2>
@@ -376,6 +380,7 @@
             </div>
           </div>
         </div>
+        
         <div class="basket__form basket__form_payment">
           <div class="basket__form-header">
             <h2 class="basket__form-name">Способ оплаты</h2>
@@ -388,6 +393,7 @@
           </div>
           <p class="sidebar__info-text basket__form-card-text">Спишем оплату с карты при получении</p>
         </div>
+
         <div class="basket__form basket__form_user">
           <div class="basket__form-header">
             <h2 class="basket__form-name">Получатель</h2>
@@ -519,21 +525,21 @@
             <p class="popup__payment-number">1234 56•• •••• 1234</p>
           </label>
         </div>
-  
+
         <div class="form_radio">
           <input id="visa" type="radio" name="radio" value="2">
           <label class="popup__payment-label" for="visa">
             <img class="popup__payment-logo" src="./images/visa.svg" alt="MIR">
             <p class="popup__payment-number">1234 56•• •••• 1234</p>
         </div>
-  
+
         <div class="form_radio">
           <input id="mastercard" type="radio" name="radio" value="3">
           <label class="popup__payment-label" for="mastercard">
             <img class="popup__payment-logo" src="./images/mastercard.svg" alt="MIR">
             <p class="popup__payment-number">1234 56•• •••• 1234</p>
         </div>
-  
+
         <div class="form_radio">
           <input id="maestro" type="radio" name="radio" value="4">
           <label class="popup__payment-label" for="maestro">
@@ -541,29 +547,55 @@
             <p class="popup__payment-number">1234 56•• •••• 1234</p>
         </div>
       </div>
-  
+
       <button class="popup__button">Выбрать</button>
     </div>
   </div>
-  
+
   <div class="popup">
     <div class="popup__container popup__container_delivery">
       <button class="popup__button-exit"></button>
       <div class="popup__content">
-        <p class="popup__title">Способ оплаты</p>
-        <div class="popup__delivery-types">
-          <button class="popup__delivery-type popup__delivery-type_shop">В пункт выдачи</button>
-          <button class="popup__delivery-type popup__delivery-type_courier">Курьером</button>
+        <p class="popup__title">Способ доставки</p>
+        <div class="popup__delivery-types-buttons">
+          <button class="popup__delivery-button popup__delivery-button_shop">В пункт выдачи</button>
+          <button class="popup__delivery-button popup__delivery-button_courier">Курьером</button>
         </div>
-  
-        <div class="popup__delivery-addresses popup__delivery-addresses_shop">
+
+        <div class="popup__delivery-addresses popup__delivery-addresses_courier">
           <p class="popup__delivery-addresses-title">Мои адреса</p>
-  
-          <div class="form_radio">
+          <div class="popup__form-radio">
             <input id="mir" type="radio" name="radio" value="1" checked>
-            <label class="popup__payment-label" for="mir">
+            <label class="popup__address-label" for="mir">
+              <p class="popup__form-address">Бишкек, улица Табышалиева, 57</p>
+              <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
+            </label>
+          </div>
+
+          <div class="popup__form-radio">
+            <input id="mir" type="radio" name="radio" value="1" checked>
+            <label class="popup__address-label" for="mir">
+              <p class="popup__form-address">Бишкек, улица Жукеева-Пудовкина, 77/1</p>
+              <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
+            </label>
+            </div>
+            
+            <div class="popup__form-radio">
+              <input id="mir" type="radio" name="radio" value="1" checked>
+              <label class="popup__address-label" for="mir">
+                <p class="popup__form-address">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
+                <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
+              </label>
+            </div>
+            </div>
+            
+            <div class="popup__delivery-addresses popup__delivery-addresses_shop">
+              <p class="popup__delivery-addresses-title">Мои адреса</p>
+              <div class="popup__form-radio">
+                <input id="mir" type="radio" name="radio" value="1" checked>
+                <label class="popup__address-label" for="mir">
               <div class="basket__form-info-value">
-                <p class="basket__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
+                <p class="popup__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
                 <div class="basket__form-about-shop">
                   <div class="basket__form-rating">
                     <img class="basket__form-icon-star" src="./images/Stars.svg" alt="Рейтинг">
@@ -571,16 +603,16 @@
                   <p class="basket__form-info-text">Пункт выдачи</p>
                 </div>
               </div>
-  
-              <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+
+              <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
             </label>
           </div>
-  
-          <div class="form_radio">
+
+          <div class="popup__form-radio">
             <input id="visa" type="radio" name="radio" value="2">
-            <label class="popup__payment-label" for="visa">
+            <label class="popup__address-label" for="visa">
               <div class="basket__form-info-value">
-                <p class="basket__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
+                <p class="popup__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
                 <div class="basket__form-about-shop">
                   <div class="basket__form-rating">
                     <img class="basket__form-icon-star" src="./images/Stars.svg" alt="Рейтинг">
@@ -588,15 +620,15 @@
                   </div>
                   <p class="basket__form-info-text">Пункт выдачи</p>
                 </div>
-              </div><button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+              </div><button class="popup__button-delete" type='button' aria-label='Корзина'></button>
             </label>
           </div>
-  
-          <div class="form_radio">
+
+          <div class="popup__form-radio">
             <input id="mastercard" type="radio" name="radio" value="3">
-            <label class="popup__payment-label" for="mastercard">
+            <label class="popup__address-label" for="mastercard">
               <div class="basket__form-info-value">
-                <p class="basket__form-address">г. Бишкек, улица Табышалиева, д. 57</p>
+                <p class="popup__form-address">г. Бишкек, улица Табышалиева, д. 57</p>
                 <div class="basket__form-about-shop">
                   <div class="basket__form-rating">
                     <img class="basket__form-icon-star" src="./images/Stars.svg" alt="Рейтинг">
@@ -605,42 +637,17 @@
                   <p class="basket__form-info-text">Пункт выдачи</p>
                 </div>
               </div>
-  
-              <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
-            </label>
-          </div>
-  
-          <div class="popup__delivery-addresses popup__delivery-addresses_courier">
-            <p class="popup__delivery-addresses-title">Мои адреса</p>
-            <div class="form_radio">
-              <input id="mir" type="radio" name="radio" value="1" checked>
-              <label class="popup__payment-label" for="mir">
-                <p class="popup__payment-number">Бишкек, улица Табышалиева, 57</p>
-                <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
+              <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
               </label>
-            </div>
-  
-            <div class="form_radio">
-              <input id="mir" type="radio" name="radio" value="1" checked>
-              <label class="popup__payment-label" for="mir">
-                <p class="popup__payment-number">Бишкек, улица Жукеева-Пудовкина, 77/1</p>
-                <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
-              </label>
-            </div>
-  
-            <div class="form_radio">
-              <input id="mir" type="radio" name="radio" value="1" checked>
-              <label class="popup__payment-label" for="mir">
-                <p class="popup__payment-number">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
-                <button class="basket__button-delete" type='button' aria-label='Корзина'></button>
-              </label>
-            </div>
-  
-          </div>
-          <button class="popup__button">Выбрать</button>
+              </div>
         </div>
+
+        <button class="popup__button popup__button_delivery">Выбрать</button>
+      </div>
+      </div>
       </div>
 
+  <script src="index.js" type="text/javascript"></script>
 </body>
 
 </html>
