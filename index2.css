@@ -121,7 +121,7 @@
     margin-top: -8px;
   }
 
-    .basket__title {
+  .basket__title {
     margin: 0 0 13px;
     font-size: 20px;
     letter-spacing: -0.2px;
@@ -370,6 +370,35 @@
   .sidebar__info-text_free {
     cursor: none;
     margin-left: 0;
+  }
+
+  .popup__button {
+    width: 100%;
+  }
+
+  .popup__form-address {
+    width: 236px;
+  }
+
+  .popup__container {
+    border-radius: 0;
+    padding: 16px 16px;
+  }
+
+  .popup__container_payment {
+    width: 320px;
+  }
+
+  .popup__container_delivery {
+    width: 320px;
+  }
+
+  .popup__title {
+    font-weight: 600;
+  }
+
+  .popup__button-exit {
+    right: 14px;
   }
 }
 
