@@ -1,0 +1,73 @@
+html {
+  overflow: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.page {
+  background-color: #F6F6FA;
+  min-width: 320px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0 auto;
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.basket__title {
+  font-size: 28px;
+  line-height: 1.28;
+  margin: 10px 0 24px;
+  letter-spacing: -0.28px;
+}
+
+.basket__content {
+  max-width: 891px;
+  margin-top: 2px;
+  width: calc(100% - 429px - 32px);
+}
+
+@media (max-width: 1200px) {
+  .basket__content {
+    width: calc(100% - 304px - 32px);
+  }
+}
+
+@media (max-width: 1020px) {
+  .basket__content {
+    width: 100%;
+  }
+
+  .content {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1020px) {
+  .content {
+    padding: 0;
+  }
+
+  .basket__content {
+    margin-top: -8px;
+  }
+
+  .basket__title {
+    margin: 0 0 13px;
+    font-size: 20px;
+    letter-spacing: -0.2px;
+    line-height: 1.4;
+    padding: 0 16px;
+  }
+}

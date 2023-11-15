@@ -1,0 +1,81 @@
+.tooltip {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15),
+      0 0 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    position: absolute;
+    padding: 11px 16px 13px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  .tooltip_shop-info {
+    width: 280px;
+    top: 25px;
+    left: 0;
+  }
+  
+  .tooltip_price-info {
+    width: 239px;
+    top: 52px;
+    right: -9px;
+  }
+  
+  .tooltip_free-delivery {
+    width: 288px;
+    top: 26px;
+    left: 230px;
+  }
+  
+  .tooltip_sidebar-free-delivery {
+    width: 288px;
+    top: 45px;
+    left: 0;
+  }
+  
+  .basket__info-icon:hover+.tooltip_shop-info {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .basket__item-price:hover+.tooltip_price-info {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .tooltip_opened {
+    visibility: visible;
+    opacity: 1;
+  }
+ 
+  .tooltip__title {
+    font-size: 13px;
+    line-height: 1.23;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tooltip__text {
+    font-size: 13px;
+    line-height: 1.23;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tooltip__sale {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  
+  .tooltip__text_sale-name {
+    color: #A0A0A4;
+  }
+  

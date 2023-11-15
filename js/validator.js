@@ -13,6 +13,9 @@ const userFormInputEmailError = document.querySelector(".email-input-error");
 const userFormInputPhoneError = document.querySelector(".phone-input-error");
 const userFormInputTINError = document.querySelector(".tin-input-error");
 
+const popupOrder = document.querySelector('.popup_order');
+const buttonCloseOrderPopup = document.querySelector('.popup_order .popup__button-exit');
+
 const nameRegex = /^[a-zA-Zа-яёА-ЯЁ\s\-]*$/;
 const emailRegex = /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.[a-zA-Z]{2,3})+$)/;
 const phoneRegex = /^[1-9]?[-]?\(?\d{3}\)?[-]?\d{3}[-]?\d{2}[-]?\d{2}$/;
@@ -99,11 +102,12 @@ const isValidForm = () => {
 
 const orderButton = () => {
   if (isValidForm()) {
-    alert('Заказ оформлен')
+    popupOrder.classList.add('popup_opened');
   } else {
     userForm.scrollIntoView();
   }
 }
 
 buttonOrder.addEventListener('click', () => orderButton());
+buttonCloseOrderPopup.addEventListener('click', () => { popupOrder.classList.remove('popup_opened') });
 

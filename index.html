@@ -5,8 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="./index1.css">
-  <link rel="stylesheet" href="./index2.css">
+  <link rel="stylesheet" href="./styles/basket/basket.css">
+  <link rel="stylesheet" href="./styles/basket/__form/basket__form.css">
+  <link rel="stylesheet" href="./styles/basket/__list/basket__list.css">
+  <link rel="stylesheet" href="./styles/header/header.css">
+  <link rel="stylesheet" href="./styles/tooltip/tooltip.css">
+  <link rel="stylesheet" href="./styles/sidebar/sidebar.css">
+  <link rel="stylesheet" href="./styles/footer/footer.css">
+  <link rel="stylesheet" href="./styles/popup/popup.css">
   <title>Товары и точка — Корзина</title>
 </head>
 
@@ -360,7 +366,7 @@
                 <img class="basket__form-delivery-photo" src="./images/Frame 277132129 (1).jpg" alt="img">
               </div>
             </div>
-            <div class="basket__form-info-item">
+            <div class="basket__form-info-item basket__form-info-item_last">
               <p class="basket__form-info-title">7—8 февраля</p>
               <div class="basket__form-delivery-photos">
                 <img class="basket__form-delivery-photo" src="./images/Frame 277132129.jpg" alt="img">
@@ -370,10 +376,8 @@
 
             <div class="basket__form-delivery-price">
               <img class="sidebar__info-tick-price" src="./images/shipping.svg" alt="Галочка зеленая">
-              <p class="basket__info-text">Обратная доставка товаров на склад при отказе —&nbsp
-                <span class="sidebar__info-text_mobile">бесплатно</span>
-              </p>
-              <span class="sidebar__info-text basket__info-text_free"> бесплатно</span>
+              <p class="basket__info-text">Обратная доставка товаров на склад при отказе — <span
+                  class="sidebar__info-text basket__info-text_free">бесплатно</span></p>
               <div class="tooltip tooltip_free-delivery">
                 <p class="tooltip__text">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</p>
               </div>
@@ -470,7 +474,7 @@
 
           <div class="sidebar__info-price-zone">
             <img class="sidebar__info-tick-price" src="./images/shipping.svg" alt="Галочка зеленая">
-            <p class="sidebar__info-text">Обратная доставка товаров на склад при отказе — <span
+            <p class="sidebar__info-text_return">Обратная доставка товаров на склад при отказе — <span
                 class="sidebar__info-text sidebar__info-text_free">бесплатно</span></p>
             <div class="tooltip tooltip_sidebar-free-delivery">
               <p class="tooltip__text">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</p>
@@ -485,7 +489,7 @@
           </div>
           <div class="sidebar__card">
             <img class="sidebar__info-payment-img" src="./images/mirlogo.svg" alt="MIR">
-            <p class="sidebar__info-text">1234 12•• •••• 1234</p>
+            <p class="sidebar__info-text_return">1234 12•• •••• 1234</p>
           </div>
           <div class="sidebar__info-payment-zone">
             <label for="payment-checkbox" class="form__label">
@@ -493,7 +497,7 @@
               <span class="form__pseudo-item"></span>
               <span class="form__label-text">Списать оплату сразу</span>
             </label>
-            <p class="sidebar__info-text sidebar__info-text-payment">Спишем оплату с карты при получении</p>
+            <p class="sidebar__info-text_return">Спишем оплату с карты при получении</p>
           </div>
         </div>
 
@@ -648,6 +652,13 @@
 
         <button class="popup__button popup__button_delivery">Выбрать</button>
       </div>
+    </div>
+  </div>
+
+  <div class="popup popup_order">
+    <div class="popup__container popup__container_order">
+      <button class="popup__button-exit"></button>
+        <p class="popup__title">Ваш заказ оформлен!</p>
     </div>
   </div>
 

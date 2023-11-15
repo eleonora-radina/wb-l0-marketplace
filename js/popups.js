@@ -8,12 +8,21 @@ const popupPaymentForm = document.querySelector('.popup_payment');
 const buttonCloseDeliveryPopup = document.querySelector('.popup_delivery .popup__button-exit');
 const buttonClosePaymentPopup = document.querySelector('.popup_payment .popup__button-exit');
 
+const buttonFreeReturnDelivery = document.querySelector('.basket__info-text_free');
+const buttonFreeReturnDeliverySidebar = document.querySelector('.sidebar__info-text_free');
+const tooltipFreeReturnDelivery = document.querySelector('.tooltip_free-delivery');
+const tooltipFreeReturnDeliverySidebar = document.querySelector('.tooltip_sidebar-free-delivery');
+
 const openPopup = (popup) => {
   popup.classList.add('popup_opened');
 }
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+}
+
+const toggleTooltip = (tooltip) => {
+  tooltip.classList.toggle('tooltip_opened');
 }
 
 accordionButton.addEventListener('click', () => toggleAccordionList());
@@ -26,3 +35,8 @@ buttonSidebarPaymentDelivery.addEventListener('click', () => openPopup(popupPaym
 
 buttonCloseDeliveryPopup.addEventListener('click', () => closePopup(popupDeliveryForm));
 buttonClosePaymentPopup.addEventListener('click', () => closePopup(popupPaymentForm));
+
+buttonFreeReturnDelivery.addEventListener('mouseover', () => toggleTooltip(tooltipFreeReturnDelivery));
+buttonFreeReturnDelivery.addEventListener('mouseout', () => toggleTooltip(tooltipFreeReturnDelivery));
+buttonFreeReturnDeliverySidebar.addEventListener('mouseover', () => toggleTooltip(tooltipFreeReturnDeliverySidebar));
+buttonFreeReturnDeliverySidebar.addEventListener('mouseout', () => toggleTooltip(tooltipFreeReturnDeliverySidebar));

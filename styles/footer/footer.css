@@ -1,0 +1,23 @@
+.footer {
+    background-color: #6725A8;
+    margin: 0 auto;
+  }
+  
+  .footer__rounding {
+    background-color: #F6F6FA;
+    height: 24px;
+    border-radius: 0 0 24px 24px;
+  }
+  
+  .footer__container {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+  
+  .footer__text {
+    font-size: 13px;
+    line-height: 1.23;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
