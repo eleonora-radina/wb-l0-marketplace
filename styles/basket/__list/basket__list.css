@@ -166,6 +166,14 @@ input[type="number"]:focus {
   margin-bottom: 9px;
 }
 
+.basket__missing-item {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  margin-bottom: 9px;
+}
+
+
 .basket__item-info-price {
   display: flex;
   justify-content: space-between;
@@ -239,6 +247,10 @@ input[type="number"]:focus {
   transition: all 0.3s ease;
 }
 
+.basket__button-like_active {
+  background: transparent url('../../../images/heartactive.svg') center no-repeat;
+}
+
 .basket__button-like:hover {
   background: transparent url('../../../images/heartactive.svg') center no-repeat;
 }
@@ -272,6 +284,11 @@ input[type="number"]:focus {
   visibility: visible;
 }
 
+.basket__missing-item:hover .basket__item-buttons {
+  opacity: 1;
+  visibility: visible;
+}
+
 .basket__item-prices {
   display: flex;
   width: 110px;
@@ -289,6 +306,16 @@ input[type="number"]:focus {
 }
 
 .basket__item-price {
+  font-size: 13px;
+  line-height: 1.23;
+  color: #9797AF;
+  text-decoration: line-through;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.20);
+  margin: 0;
+  cursor: pointer;
+}
+
+.basket__item-prices_mobile {
   font-size: 13px;
   line-height: 1.23;
   color: #9797AF;
@@ -406,6 +433,15 @@ input[type="number"]:focus {
 
 @media (max-width: 1020px) {
   .basket__item {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+  }
+
+  .basket__missing-item {
     flex-direction: column;
     display: flex;
     justify-content: space-between;

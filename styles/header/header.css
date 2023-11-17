@@ -34,6 +34,12 @@
   height: 48px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.45);
+  transition: border 0.3s;
+  cursor: pointer;
+}
+
+.header__burger:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .header__logo {
@@ -42,6 +48,7 @@
   width: 106px;
   height: 48px;
   margin-top: 4px;
+  cursor: pointer;
 }
 
 .header__navbar {
@@ -67,6 +74,12 @@
   text-decoration: none;
   align-items: center;
   margin-bottom: 2px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.header__navbar-link:hover {
+  opacity: 0.6;
 }
 
 .header__navbar-img {
@@ -87,6 +100,12 @@
   height: 48px;
   max-width: 970px;
   width: 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header__search:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .header__search-form {
@@ -104,6 +123,7 @@
   width: 100%;
   margin-bottom: 2px;
   outline: none;
+  cursor: pointer;
 }
 
 .header__search-input::placeholder {
