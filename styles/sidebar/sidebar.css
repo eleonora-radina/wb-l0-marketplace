@@ -60,6 +60,11 @@
   height: 20px;
   margin-top: 2px;
   cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.sidebar__info-edit-button:hover {
+  opacity: 0.6;
 }
 
 .sidebar__info-text {
@@ -144,6 +149,11 @@
   margin-bottom: 8px;
   padding: 0 0 5px;
   cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.sidebar__button-order:hover {
+  opacity: 0.8;
 }
 
 .sidebar__button-rules {

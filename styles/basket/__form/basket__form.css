@@ -47,6 +47,11 @@
   cursor: pointer;
   padding: 0;
   padding-bottom: 1px;
+  transition: opacity 0.3s;
+}
+
+.basket__form-button:hover {
+  opacity: 0.6;
 }
 
 .basket__form-info-item {

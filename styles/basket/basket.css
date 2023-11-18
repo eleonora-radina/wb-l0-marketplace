@@ -38,6 +38,22 @@ body {
   width: calc(100% - 429px - 32px);
 }
 
+.count-label {
+  display: flex;
+  border-radius: 50%;
+  background-color: #F55123;
+  color: #fff;
+  height: 16px;
+  position: absolute;
+  top: -5px;
+  right: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  justify-content: center;
+  padding: 0 5px;
+}
+
 @media (max-width: 1200px) {
   .basket__content {
     width: calc(100% - 304px - 32px);

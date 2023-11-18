@@ -63,7 +63,9 @@
   padding: 0;
 }
 
-.header__navbar-item {}
+.header__navbar-item {
+  position: relative;
+}
 
 .header__navbar-link {
   display: flex;

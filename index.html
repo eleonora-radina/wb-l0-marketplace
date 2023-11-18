@@ -41,6 +41,7 @@
           </li>
 
           <li class="header__navbar-item">
+            <span class="count-label">203</span>
             <a class="header__navbar-link" href="#">
               <img class="header__navbar-img header__navbar-img_basket" src="./images/basket.svg" alt="Корзина">
               Корзина
@@ -60,23 +61,23 @@
           <div class="basket__list-header">
             <label for="all-available-checkbox" class="form__label">
               <input type="checkbox" name="all-available-checkbox" id="all-available-checkbox" class="form__item"
-                value="all-available">
+                value="all-available" checked>
               <span class="form__pseudo-item form__pseudo-item_list"></span>
               <span class="form__label-text basket__checkbox">Выбрать все</span>
             </label>
             <div class="basket__list-header-items hidden">
-              <p class="basket__list-header-number">266 товаров ·</p>
-              <p class="basket__list-header-price">&nbsp2 100 569 сом</p>
+              <p class="basket__list-header-number">203 товаров ·</p>
+              <p class="basket__list-header-price">&nbsp2 101 063 сом</p>
             </div>
             <img class="basket__list-icon" src="./images/accordion.svg" alt="accordion">
           </div>
 
           <div class="basket__list-zone">
-            <div class="basket__item">
+            <div class="basket__item" id="1">
               <div class="basket__item-info">
-                <label for="item-checkbox" class="form__label basket__item-checkbox">
-                  <input type="checkbox" name="item-checkbox" id="item-checkbox" class="form__item"
-                    value="item-checkbox">
+                <label for="item-checkbox1" class="form__label basket__item-checkbox">
+                  <input type="checkbox" name="item-checkbox" id="item-checkbox1" class="form__item"
+                    value="item-checkbox" checked>
                   <span class="form__pseudo-item"></span>
                 </label>
                 <p class="basket__item-size-mobile">56</p>
@@ -85,8 +86,6 @@
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price"><span class="final-price_mobile">522</span><span class="small"> сом</span></p>
                     <p class="basket__item-price_mobile">1051 сом</p>
-                    <span class="final-cost" style="display: none;">522</span>
-                    <span class="cost" style="display: none;">1051</span>
                   </div>
                   <p class="basket__item-name">Футболка UZcotton мужская</p>
                   <div class="basket__item-details-line">
@@ -140,11 +139,11 @@
                 </div>
               </div>
             </div>
-            <div class="basket__item">
+            <div class="basket__item" id="2">
               <div class="basket__item-info">
                 <label for="item-checkbox2" class="form__label basket__item-checkbox">
                   <input type="checkbox" name="item-checkbox2" id="item-checkbox2" class="form__item"
-                    value="item-checkbox">
+                    value="item-checkbox" checked>
                   <span class="form__pseudo-item form__pseudo-item_list"></span>
                 </label>
                 <img class="basket__item-photo" src="./images/Frame 277132129.jpg" alt="img">
@@ -152,8 +151,6 @@
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price"><span class="final-price_mobile">2100047</span><span class="small"> сом</span></p>
                     <p class="basket__item-price_mobile">2300047 сом</p>
-                    <span class="final-cost" style="display: none;">10500</span>
-                    <span class="cost" style="display: none;">11500</span>
                   </div>
                   <p class="basket__item-name">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер
                     на Apple
@@ -190,8 +187,8 @@
                   </div>
                 </div>
                 <div class="basket__item-prices">
-                  <p class="basket__item-final-price"><span class="final-price small">2 100 047</span><span class="small"> сом</span></p>
-                  <p class="basket__item-price">2 300 047 сом</p>
+                  <p class="basket__item-final-price"><span class="final-price small">2100047</span><span class="small"> сом</span></p>
+                  <p class="basket__item-price">2300047 сом</p>
                   <div class="tooltip tooltip_price-info">
                     <div class="tooltip__sale">
                       <p class="tooltip__text tooltip__text_sale-name">Скидка 55%</p>
@@ -205,11 +202,11 @@
                 </div>
               </div>
             </div>
-            <div class="basket__item">
+            <div class="basket__item" id="3">
               <div class="basket__item-info">
                 <label for="item-checkbox3" class="form__label basket__item-checkbox">
                   <input type="checkbox" name="item-checkbox3" id="item-checkbox3" class="form__item"
-                    value="item-checkbox">
+                    value="item-checkbox" checked>
                   <span class="form__pseudo-item form__pseudo-item_list"></span>
                 </label>
                 <img class="basket__item-photo" src="./images/Frame 277132129 (1).jpg" alt="img">
@@ -217,8 +214,6 @@
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price"><span class="final-price_mobile">494</span><span class="small"> сом</span></p>
                     <p class="basket__item-price_mobile">950 сом</p>
-                    <span class="final-cost" style="display: none;">494</span>
-                    <span class="cost" style="display: none;">950</span>
                   </div>
                   <p class="basket__item-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
                     шестигранные,<br>Faber-Castell</p>
@@ -240,8 +235,8 @@
                 <div class="basket__item-controls">
                   <div class="basket__item-counter-left">
                     <div class="basket__item-counter">
-                      <button class="counter__minus" style="color: rgba(0, 0, 0, 0.2);">−</button>
-                      <input class="counter__number" type="number" minlength="1" maxlength="2" value="1"
+                      <button class="counter__minus">−</button>
+                      <input class="counter__number" type="number" minlength="1" maxlength="2" value="2"
                         autocomplete="off">
                       <button class="counter__plus">+</button>
                     </div>
@@ -253,7 +248,7 @@
                   </div>
                 </div>
                 <div class="basket__item-prices">
-                  <p class="basket__item-final-price"><span class="final-price">496</span><span class="small"> сом</span></p>
+                  <p class="basket__item-final-price"><span class="final-price">494</span><span class="small"> сом</span></p>
                   <p class="basket__item-price">950 сом</p>
                   <div class="tooltip tooltip_price-info">
                     <div class="tooltip__sale">
@@ -273,7 +268,7 @@
 
         <div class="basket__missing-list">
           <div class="basket__missing-header">
-            <p class="basket__missing-text">Отсутствуют · 3 товара</p>
+            <p class="basket__missing-text">Отсутствуют · <span class="missing-count">3</span> товара</p>
             <img class="basket__list-icon basket__list-icon_missing" src="./images/accordion.svg" alt="accordion">
           </div>
 
@@ -453,15 +448,15 @@
         <div class="sidebar__info">
           <div class="sidebar__total">
             <p class="sidebar__total-text">Итого</p>
-            <p class="sidebar__total-text">2 101 063 <span class="sidebar__total-text-currency">сом</span></p>
+            <p class="sidebar__total-text"><span class="total-final-price">2 101 063</span><span class="sidebar__total-text-currency"> сом</span></p>
           </div>
           <div class="sidebar__details">
-            <p class="sidebar__details-text">203 товара</p>
-            <p class="sidebar__details-text">2 302 048 сом</p>
+            <p class="sidebar__details-text"><span class="total-count">203</span> товара</p>
+            <p class="sidebar__details-text"><span class="total-price">2 101 065</span> сом</p>
           </div>
-          <div class="sidebar__details">
+          <div class="sidebar__details sidebar__details_sale">
             <p class="sidebar__details-text">Скидка</p>
-            <p class="sidebar__details-text">−200 985 сом</p>
+            <p class="sidebar__details-text">−<span class="total-sale">200 985</span> сом</p>
           </div>
           <div class="sidebar__details">
             <p class="sidebar__details-text">Доставка</p>
@@ -502,7 +497,7 @@
               <span class="form__pseudo-item"></span>
               <span class="form__label-text">Списать оплату сразу</span>
             </label>
-            <p class="sidebar__info-text_return">Спишем оплату с карты при получении</p>
+            <p class="sidebar__info-text_return upon-receipt-payment">Спишем оплату с карты при получении</p>
           </div>
         </div>
 
@@ -670,7 +665,7 @@
   <script src="./js/accordion.js" type="text/javascript"></script>
   <script src="./js/popup.js" type="text/javascript"></script>
   <script src="./js/validator.js" type="text/javascript"></script>
-  <script src="./js/basketItem.js" type="text/javascript"></script>
+  <script src="./js/basket.js" type="text/javascript"></script>
 </body>
 
 </html>
