@@ -391,8 +391,8 @@
             <button class="basket__form-button basket__form-button_payment" type="button">Изменить</button>
           </div>
           <div class="basket__card">
-            <img class="sidebar__info-payment-img" src="./images/mirlogo.svg" alt="MIR">
-            <p class="basket__form-card">1234 56•• •••• 1234</p>
+            <img class="sidebar__info-payment-img card-logo" src="./images/mirlogo.svg" alt="MIR">
+            <p class="basket__form-card card-number">1234 56•• •••• 1234</p>
             <p class="basket__form-card">01/30</p>
           </div>
           <p class="sidebar__info-text basket__form-card-text">Спишем оплату с карты при получении</p>
@@ -488,8 +488,8 @@
             <button class="sidebar__info-edit-button sidebar__info-edit-button_payment"></button>
           </div>
           <div class="sidebar__card">
-            <img class="sidebar__info-payment-img" src="./images/mirlogo.svg" alt="MIR">
-            <p class="sidebar__info-text_return">1234 12•• •••• 1234</p>
+            <img class="sidebar__info-payment-img card-logo-sidebar" src="./images/mirlogo.svg" alt="MIR">
+            <p class="sidebar__info-text_return card-number-sidebar">1234 12•• •••• 1234</p>
           </div>
           <div class="sidebar__info-payment-zone">
             <label for="payment-checkbox" class="form__label">
@@ -526,37 +526,45 @@
       <button class="popup__button-exit"></button>
       <div class="popup__content">
         <p class="popup__title">Способ оплаты</p>
-        <div class="form_radio">
-          <input id="mir" type="radio" name="radio" value="1" checked>
+
+        <div class="popup__radio-item">
           <label class="popup__payment-label" for="mir">
+            <input id="mir" type="radio" name="card" value="1" class="popup__radio-input" checked>
+            <span class="popup__pseudo-item"></span>
             <img class="popup__payment-logo" src="./images/mirlogo.svg" alt="MIR">
             <p class="popup__payment-number">1234 56•• •••• 1234</p>
           </label>
         </div>
 
-        <div class="form_radio">
-          <input id="visa" type="radio" name="radio" value="2">
+        <div class="popup__radio-item">
           <label class="popup__payment-label" for="visa">
+            <input id="visa" type="radio" name="card" value="2" class="popup__radio-input">
+            <span class="popup__pseudo-item"></span>
             <img class="popup__payment-logo" src="./images/visa.svg" alt="MIR">
-            <p class="popup__payment-number">1234 56•• •••• 1234</p>
+            <p class="popup__payment-number">1234 56•• •••• 1342</p>
+          </label>
         </div>
 
-        <div class="form_radio">
-          <input id="mastercard" type="radio" name="radio" value="3">
+        <div class="popup__radio-item">
           <label class="popup__payment-label" for="mastercard">
+            <input id="mastercard" type="radio" name="card" value="3" class="popup__radio-input">
+            <span class="popup__pseudo-item"></span>
             <img class="popup__payment-logo" src="./images/mastercard.svg" alt="MIR">
-            <p class="popup__payment-number">1234 56•• •••• 1234</p>
+            <p class="popup__payment-number">1234 56•• •••• 1423</p>
+          </label>
         </div>
 
-        <div class="form_radio">
-          <input id="maestro" type="radio" name="radio" value="4">
+        <div class="popup__radio-item">
           <label class="popup__payment-label" for="maestro">
+            <input id="maestro" type="radio" name="card" value="4" class="popup__radio-input">
+            <span class="popup__pseudo-item"></span>
             <img class="popup__payment-logo" src="./images/maestro.svg" alt="MIR">
-            <p class="popup__payment-number">1234 56•• •••• 1234</p>
+            <p class="popup__payment-number">1234 56•• •••• 1432</p>
+          </label>
         </div>
       </div>
 
-      <button class="popup__button">Выбрать</button>
+      <button class="popup__button popup__button_payment">Выбрать</button>
     </div>
   </div>
 
@@ -566,31 +574,34 @@
       <div class="popup__content">
         <p class="popup__title">Способ доставки</p>
         <div class="popup__delivery-types-buttons">
-          <button class="popup__delivery-button popup__delivery-button_shop">В пункт выдачи</button>
+          <button class="popup__delivery-button popup__delivery-button_shop button_active">В пункт выдачи</button>
           <button class="popup__delivery-button popup__delivery-button_courier">Курьером</button>
         </div>
 
-        <div class="popup__delivery-addresses popup__delivery-addresses_courier">
+        <div class="popup__delivery-addresses popup__delivery-addresses_courier hidden-addresses">
           <p class="popup__delivery-addresses-title">Мои адреса</p>
           <div class="popup__form-radio">
-            <input id="mir" type="radio" name="radio" value="1" checked>
-            <label class="popup__address-label" for="mir">
+            <label class="popup__address-label" for="address1">
+              <input id="address1" type="radio" name="shop" value="1" checked class="popup__radio-input">
+              <span class="popup__pseudo-item"></span>
               <p class="popup__form-address">Бишкек, улица Табышалиева, 57</p>
               <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
             </label>
           </div>
 
           <div class="popup__form-radio">
-            <input id="mir" type="radio" name="radio" value="1" checked>
-            <label class="popup__address-label" for="mir">
+            <label class="popup__address-label" for="address2">
+              <input id="address2" type="radio" name="shop" value="2" class="popup__radio-input">
+              <span class="popup__pseudo-item"></span>
               <p class="popup__form-address">Бишкек, улица Жукеева-Пудовкина, 77/1</p>
               <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
             </label>
           </div>
 
           <div class="popup__form-radio">
-            <input id="mir" type="radio" name="radio" value="1" checked>
-            <label class="popup__address-label" for="mir">
+            <label class="popup__address-label" for="address3">
+              <input id="address3" type="radio" name="shop" value="3" class="popup__radio-input">
+              <span class="popup__pseudo-item"></span>
               <p class="popup__form-address">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
               <button class="popup__button-delete" type='button' aria-label='Корзина'></button>
             </label>
@@ -600,8 +611,9 @@
         <div class="popup__delivery-addresses popup__delivery-addresses_shop">
           <p class="popup__delivery-addresses-title">Мои адреса</p>
           <div class="popup__form-radio">
-            <input id="mir" type="radio" name="radio" value="1" checked>
-            <label class="popup__address-label" for="mir">
+            <label class="popup__address-label" for="address4">
+              <input id="address4" type="radio" name="address" value="4" class="popup__radio-input" checked>
+              <span class="popup__pseudo-item"></span>
               <div class="basket__form-info-value">
                 <p class="popup__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
                 <div class="basket__form-about-shop">
@@ -617,8 +629,9 @@
           </div>
 
           <div class="popup__form-radio">
-            <input id="visa" type="radio" name="radio" value="2">
-            <label class="popup__address-label" for="visa">
+            <label class="popup__address-label" for="address5">
+              <input id="address5" type="radio" name="address" value="5" class="popup__radio-input">
+              <span class="popup__pseudo-item"></span>
               <div class="basket__form-info-value">
                 <p class="popup__form-address">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</p>
                 <div class="basket__form-about-shop">
@@ -633,8 +646,9 @@
           </div>
 
           <div class="popup__form-radio">
-            <input id="mastercard" type="radio" name="radio" value="3">
-            <label class="popup__address-label" for="mastercard">
+            <label class="popup__address-label" for="address6">
+              <input id="address6" type="radio" name="address" value="6" class="popup__radio-input">
+              <span class="popup__pseudo-item"></span>
               <div class="basket__form-info-value">
                 <p class="popup__form-address">г. Бишкек, улица Табышалиева, д. 57</p>
                 <div class="basket__form-about-shop">
