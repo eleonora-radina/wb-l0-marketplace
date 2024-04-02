@@ -12,6 +12,11 @@
   margin: 0 24px;
 }
 
+.sidebar__link {
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .sidebar__total {
   display: flex;
   justify-content: space-between;
@@ -105,7 +110,7 @@
 
 .sidebar__info-text_free {
   color: #0CB477;
-  text-decoration: underline dashed rgba(12, 180, 119, 0.2);
+  border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
   cursor: pointer;
 }
 
@@ -236,11 +241,11 @@
   }
 
   .sidebar__info:last-of-type {
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
 
   .sidebar__button-order {
-    margin-top: 8px;
+    margin-top: 10px;
   }
 
   .sidebar__total-text {

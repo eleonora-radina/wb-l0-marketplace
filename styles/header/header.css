@@ -177,6 +177,7 @@
     background-size: 198px 24px;
     width: 198px;
     height: 24px;
+    margin-top: 0;
   }
 
   .header__search {

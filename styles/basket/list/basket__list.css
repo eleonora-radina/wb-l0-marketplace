@@ -62,7 +62,7 @@ input[type="number"]:focus {
 
 .basket__info-text_free {
   color: #0CB477;
-  text-decoration: underline dashed rgba(12, 180, 119, 0.2);
+  border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
   cursor: pointer;
 }
 
@@ -326,6 +326,7 @@ input[type="number"]:focus {
   color: #9797AF;
   text-decoration: line-through;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.20);
+  margin: 4px 0 0 1px;
 }
 
 .basket__item-final-price .small {
@@ -441,7 +442,7 @@ input[type="number"]:focus {
     justify-content: space-between;
     padding-top: 12px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
+    margin-bottom: 15px;
   }
 
   .basket__missing-item {
@@ -484,6 +485,10 @@ input[type="number"]:focus {
     background-color: #fff;
   }
 
+  .form__pseudo-item_sum {
+    background-color: #F0ECF4;
+  }
+
   .basket__item-size-mobile {
     display: block;
     background-color: #fff;
@@ -491,8 +496,8 @@ input[type="number"]:focus {
     height: 21px;
     border-radius: 6px;
     position: absolute;
-    bottom: 4px;
-    left: 4px;
+    bottom: 5px;
+    left: 5px;
     margin: 0;
     font-size: 14px;
     line-height: 20px;
@@ -569,9 +574,9 @@ input[type="number"]:focus {
   }
 
   .basket__item-buttons {
-    margin-top: 7px;
+    margin-top: 6px;
     gap: 25px;
-    margin-right: 12px;
+    margin-right: 11px;
     margin-bottom: 0;
     visibility: visible;
     opacity: 1;
