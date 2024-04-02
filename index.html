@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./styles/basket/list/basket__list.css">
   <link rel="stylesheet" href="./styles/header/header.css">
   <link rel="stylesheet" href="./styles/tooltip/tooltip.css">
+  <link rel="stylesheet" href="./styles/tabbar/tabbar.css">
   <link rel="stylesheet" href="./styles/sidebar/sidebar.css">
   <link rel="stylesheet" href="./styles/footer/footer.css">
   <link rel="stylesheet" href="./styles/popup/popup.css">
@@ -495,7 +496,7 @@
           <div class="sidebar__info-payment-zone">
             <label for="payment-checkbox" class="form__label">
               <input type="checkbox" name="payment-checkbox" id="payment-checkbox" class="form__item" value="payment">
-              <span class="form__pseudo-item"></span>
+              <span class="form__pseudo-item form__pseudo-item_sum"></span>
               <span class="form__label-text">Списать оплату сразу</span>
             </label>
             <p class="sidebar__info-text_return upon-receipt-payment">Спишем оплату с карты при получении</p>
@@ -506,8 +507,8 @@
           <button class="sidebar__button-order">Заказать</button>
           <div class="sidebar__button-rules">
             <img class="sidebar__info-tick" src="./images/tick.svg" alt="Галочка">
-            <p class="sidebar__info-text sidebar__info-text-sogl">Соглашаюсь с правилами пользования торговой площадкой
-              и возврата
+            <p class="sidebar__info-text sidebar__info-text-sogl">Соглашаюсь <a class="sidebar__link">с правилами пользования торговой площадкой</a>
+              и <a class="sidebar__link">возврата</a>
             </p>
           </div>
         </div>
@@ -518,7 +519,7 @@
   <footer class="footer">
     <div class="footer__rounding"></div>
     <div class="footer__container">
-      <p class="footer__text">© 2022 ООО «Товары и точка»</p>
+      <p class="footer__text">© 2022  ООО «Товары и точка»</p>
     </div>
   </footer>
 
@@ -676,6 +677,41 @@
         <p class="popup__title">Ваш заказ оформлен!</p>
     </div>
   </div>
+
+  <nav class="tabbar">
+    <ul class="tabbar__list">
+      <li class="tabbar__item">
+        <button class="tabbar__btn" href="#">
+          <img class="tabbar__img" src="./images/main.svg" alt="main">
+        </button>
+      </li>
+
+      <li class="tabbar__item">
+        <button class="tabbar__btn" href="#">
+          <img class="tabbar__img" src="./images/catalog.svg" alt="catalog">
+        </button>
+      </li>
+      
+      <li class="tabbar__item">
+        <span class="tabbar__count-label">203</span>
+        <button class="tabbar__btn" href="#">
+          <img class="tabbar__img" src="./images/cart.svg" alt="cart">
+        </button>
+      </li>
+
+      <li class="tabbar__item">
+        <button class="tabbar__btn" href="#">
+          <img class="tabbar__img" src="./images/favorites.svg" alt="favorites">
+        </button>
+      </li>
+
+      <li class="tabbar__item">
+        <button class="tabbar__btn" href="#">
+          <img class="tabbar__img" src="./images/profile-tabbar.svg" alt="profile">
+        </button>
+      </li>
+    </ul>
+</nav>
 
   <script src="./js/accordion.js" type="text/javascript"></script>
   <script src="./js/popup.js" type="text/javascript"></script>
