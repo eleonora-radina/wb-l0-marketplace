@@ -20,7 +20,7 @@
 .sidebar__total {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
 }
 
 .sidebar__details {
@@ -150,7 +150,7 @@
   font-weight: 700;
   width: 100%;
   height: 44px;
-  margin-top: 24px;
+  margin-top: 25px;
   margin-bottom: 8px;
   padding: 0 0 5px;
   cursor: pointer;
@@ -175,7 +175,7 @@
   font-size: 20px;
 }
 
-.sidebar__info-text-sogl {
+.sidebar__info-text-agreement {
   margin-top: 4px;
 }
 

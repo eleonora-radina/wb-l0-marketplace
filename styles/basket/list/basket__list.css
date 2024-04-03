@@ -10,18 +10,11 @@ input[type="number"]:focus {
   -moz-appearance: textfield;
 }
 
-.basket__list {}
-
 .basket__list-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
   margin-right: 1px;
-}
-
-.basket__list-icon {
-  margin-top: 3px;
-  cursor: pointer;
 }
 
 .basket__list-zone {
@@ -51,9 +44,11 @@ input[type="number"]:focus {
 }
 
 .basket__list-icon {
-  margin-right: 5px;
-  margin-top: 6px;
+  cursor: pointer;
+  margin-right: 1px;
+  margin-top: 1px;
 }
+
 .basket__info-text {
   margin: 6px 0;
   font-size: 13px;
@@ -179,8 +174,6 @@ input[type="number"]:focus {
   justify-content: space-between;
   gap: 16px;
 }
-
-.basket__item-controls {}
 
 .basket__item-counter {
   background-color: #fff;
@@ -335,7 +328,7 @@ input[type="number"]:focus {
 }
 
 .basket__item-checkbox {
-  margin-top: 36.5px;
+  margin-top: 36px;
 }
 
 .basket__missing-header {
@@ -398,8 +391,6 @@ input[type="number"]:focus {
 .sidebar__info-text_mobile {
   display: none;
 }
-
-.container {}
 
 .container-label {
   cursor: pointer;
@@ -505,8 +496,6 @@ input[type="number"]:focus {
     color: black;
     z-index: 1;
   }
-
-  .basket__item-buttons_missing {}
 
   .basket__item-counter {
     height: 32px;

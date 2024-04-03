@@ -1,29 +1,4 @@
-const items = [
-  {
-    id: "1",
-    finalPrice: 522,
-    price: 1051,
-    count: 1,
-    available: 3,
-    checked: true
-  },
-  {
-    id: "2",
-    finalPrice: 10500,
-    price: 11500,
-    count: 200,
-    available: 220,
-    checked: true
-  },
-  {
-    id: "3",
-    finalPrice: 247,
-    price: 475,
-    count: 2,
-    available: 3,
-    checked: true
-  }
-]
+import { items } from "./data/itemsData.js";
 
 const basketItems = document.querySelectorAll('.basket__item');
 const basketMissingItems = document.querySelectorAll('.basket__missing-item');
@@ -34,7 +9,7 @@ const totalOrderCount = document.querySelector('.total-count');
 const totalOrderCountLabel = document.querySelector('.count-label');
 const totalOrderCountHeader = document.querySelector('.basket__list-header-number');
 const totalOrderFinalPriceHeader = document.querySelector('.basket__list-header-price');
-const checkboxChooseAll = document.getElementById('all-available-checkbox');
+const checkboxChooseAll = document.getElementById('select-all');
 const missingItemsCount = document.querySelector('.missing-count');
 const checkboxPayment = document.getElementById('payment-checkbox');
 let orderFinalPrice = 2101063;
@@ -43,7 +18,7 @@ function deleteItem(item) {
   item.style.display = 'none';
 
   if (item.classList.contains('basket__item')) {
-    items.splice(items.findIndex(x => x.id === item.id), 1)
+    items.splice(items.findIndex(x => x.id === item.dataset.id), 1)
     updateTotalOrderPrice();
   } else {
     if (item.classList.contains('basket__missing-item')) {
@@ -64,9 +39,9 @@ function updateTotalItemPrice(item) {
   const price = item.querySelector('.basket__item-price');
   const priceMobile = item.querySelector('.basket__item-price_mobile');
 
-  const cost = items.find(x => x.id === item.id).price;
-  const finalCost = items.find(x => x.id === item.id).finalPrice;
-  const count = items.find(x => x.id === item.id).count;
+  const cost = items.find(x => x.id === item.dataset.id).price;
+  const finalCost = items.find(x => x.id === item.dataset.id).finalPrice;
+  const count = items.find(x => x.id === item.dataset.id).count;
 
   const totalFinalPrice = finalCost * count;
   const totalPrice = cost * count;
@@ -107,7 +82,7 @@ basketItems.forEach(function (item) {
   const buttonDelete = item.querySelector('.basket__button-delete');
   const finalPrice = item.querySelector('.final-price');
   const checkbox = item.querySelector('.form__item');
-  let index = items.findIndex(x => x.id === item.id);
+  let index = items.findIndex(x => x.id === item.dataset.id);
 
   checkbox.addEventListener('click', function () {
     items[index].checked = checkbox.checked;
@@ -190,7 +165,7 @@ checkboxChooseAll.addEventListener('click', function () {
   basketItems.forEach(function (item) {
     const checkbox = item.querySelector('.form__item');
     checkbox.checked = checkboxChooseAll.checked;
-    let index = items.findIndex(x => x.id === item.id);
+    let index = items.findIndex(x => x.id === item.dataset.id);
     if (index >= 0) {
       items[index].checked = checkboxChooseAll.checked;
     }

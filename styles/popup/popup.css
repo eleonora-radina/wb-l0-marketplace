@@ -46,8 +46,6 @@
   display: flex;
 }
 
-.popup_payment {}
-
 .popup__button-exit {
   position: absolute;
   top: 20px;
@@ -83,8 +81,6 @@
   align-items: center;
   cursor: pointer;
 }
-
-.popup__payment-logo {}
 
 .popup__payment-number {
   font-size: 16px;
@@ -137,10 +133,6 @@
   border: 2px solid rgba(203, 17, 171);
 }
 
-.popup__delivery-button_shop {}
-
-.popup__delivery-button_courier {}
-
 .hidden-addresses {
   display: none;
 }
@@ -190,10 +182,6 @@
   margin-bottom: 20px;
 }
 
-.popup__form-radio input {
-  margin-top: 7px;
-}
-
 .popup__button_delivery {
   margin-top: 35px;
 }
@@ -218,6 +206,7 @@
   height: 1px;
   overflow: hidden;
   clip-path: inset(0 0 0 0);
+  margin-top: 7px;
 }
 
 .popup__radio-input:checked+.popup__pseudo-item {

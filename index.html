@@ -61,8 +61,8 @@
         <h1 class="basket__title">Корзина</h1>
         <div class="basket__list">
           <div class="basket__list-header">
-            <label for="all-available-checkbox" class="form__label">
-              <input type="checkbox" name="all-available-checkbox" id="all-available-checkbox" class="form__item"
+            <label for="select-all" class="form__label">
+              <input type="checkbox" name="select-all" id="select-all" class="form__item"
                 value="all-available" checked>
               <span class="form__pseudo-item form__pseudo-item_list"></span>
               <span class="form__label-text basket__checkbox">Выбрать все</span>
@@ -75,7 +75,7 @@
           </div>
 
           <div class="basket__list-zone">
-            <div class="basket__item" id="1">
+            <div class="basket__item" data-id="1">
               <div class="basket__item-info">
                 <label for="item-checkbox1" class="form__label basket__item-checkbox">
                   <input type="checkbox" name="item-checkbox" id="item-checkbox1" class="form__item"
@@ -83,7 +83,7 @@
                   <span class="form__pseudo-item"></span>
                 </label>
                 <p class="basket__item-size-mobile">56</p>
-                <img class="basket__item-photo" src="./images/item1.jpg" alt="img">
+                <img class="basket__item-photo" src="./images/item1.jpg" alt="item1">
                 <div class="basket__item-details">
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price"><span class="final-price_mobile">522</span><span class="small"> сом</span></p>
@@ -141,14 +141,14 @@
                 </div>
               </div>
             </div>
-            <div class="basket__item" id="2">
+            <div class="basket__item" data-id="2">
               <div class="basket__item-info">
                 <label for="item-checkbox2" class="form__label basket__item-checkbox">
                   <input type="checkbox" name="item-checkbox2" id="item-checkbox2" class="form__item"
                     value="item-checkbox" checked>
                   <span class="form__pseudo-item form__pseudo-item_list"></span>
                 </label>
-                <img class="basket__item-photo" src="./images/item2.jpg" alt="img">
+                <img class="basket__item-photo" src="./images/item2.jpg" alt="item2">
                 <div class="basket__item-details">
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price"><span class="final-price_mobile">2100047</span><span class="small"> сом</span></p>
@@ -204,14 +204,14 @@
                 </div>
               </div>
             </div>
-            <div class="basket__item" id="3">
+            <div class="basket__item" data-id="3">
               <div class="basket__item-info">
                 <label for="item-checkbox3" class="form__label basket__item-checkbox">
                   <input type="checkbox" name="item-checkbox3" id="item-checkbox3" class="form__item"
                     value="item-checkbox" checked>
                   <span class="form__pseudo-item form__pseudo-item_list"></span>
                 </label>
-                <img class="basket__item-photo" src="./images/item3.jpg" alt="img">
+                <img class="basket__item-photo" src="./images/item3.jpg" alt="item3">
                 <div class="basket__item-details">
                   <div class="basket__item-prices basket__item-prices_mobile">
                     <p class="basket__item-final-price"><span class="final-price_mobile">494</span><span class="small"> сом</span></p>
@@ -278,7 +278,7 @@
             <div class="basket__missing-item">
               <div class="basket__item-info">
                 <p class="basket__item-size-mobile">56</p>
-                <img class="basket__item-photo basket__item-photo_missing" src="./images/item1.jpg" alt="img">
+                <img class="basket__item-photo basket__item-photo_missing" src="./images/item1.jpg" alt="item1">
                 <div class="basket__item-details">
                   <p class="basket__item-name">Футболка UZcotton мужская</p>
                   <div class="basket__item-details-line">
@@ -298,7 +298,7 @@
 
             <div class="basket__missing-item">
               <div class="basket__item-info">
-                <img class="basket__item-photo basket__item-photo_missing" src="./images/item2.jpg" alt="img">
+                <img class="basket__item-photo basket__item-photo_missing" src="./images/item2.jpg" alt="item2">
                 <div class="basket__item-details">
                   <p class="basket__item-name">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер
                     на Apple
@@ -320,7 +320,7 @@
             <div class="basket__missing-item">
               <div class="basket__item-info">
                 <img class="basket__item-photo basket__item-photo_missing" src="./images/item3.jpg"
-                  alt="img">
+                  alt="item3">
                 <div class="basket__item-details">
                   <p class="basket__item-name">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные,
                     шестигранные, Faber-Castell</p>
@@ -363,15 +363,15 @@
             <div class="basket__form-info-item">
               <p class="basket__form-info-title">5—6 февраля</p>
               <div class="basket__form-delivery-photos">
-                <img class="basket__form-delivery-photo" src="./images/item1.jpg" alt="img">
-                <img class="basket__form-delivery-photo" src="./images/item2.jpg" alt="img">
-                <img class="basket__form-delivery-photo" src="./images/item3.jpg" alt="img">
+                <img class="basket__form-delivery-photo" src="./images/item1.jpg" alt="item1">
+                <img class="basket__form-delivery-photo" src="./images/item2.jpg" alt="item2">
+                <img class="basket__form-delivery-photo" src="./images/item3.jpg" alt="item3">
               </div>
             </div>
             <div class="basket__form-info-item basket__form-info-item_last">
               <p class="basket__form-info-title">7—8 февраля</p>
               <div class="basket__form-delivery-photos">
-                <img class="basket__form-delivery-photo" src="./images/item2.jpg" alt="img">
+                <img class="basket__form-delivery-photo" src="./images/item2.jpg" alt="item2">
               </div>
             </div>
 
@@ -507,7 +507,7 @@
           <button class="sidebar__button-order">Заказать</button>
           <div class="sidebar__button-rules">
             <img class="sidebar__info-tick" src="./images/tick.svg" alt="Галочка">
-            <p class="sidebar__info-text sidebar__info-text-sogl">Соглашаюсь <a class="sidebar__link">с правилами пользования торговой площадкой</a>
+            <p class="sidebar__info-text sidebar__info-text-agreement">Соглашаюсь <a class="sidebar__link">с правилами пользования торговой площадкой</a>
               и <a class="sidebar__link">возврата</a>
             </p>
           </div>
@@ -713,10 +713,12 @@
     </ul>
 </nav>
 
+
+  <script src="./js/data/itemsData.js" type="module"></script>
+  <script src="./js/basket.js" type="module"></script>
   <script src="./js/accordion.js" type="text/javascript"></script>
   <script src="./js/popup.js" type="text/javascript"></script>
   <script src="./js/validator.js" type="text/javascript"></script>
-  <script src="./js/basket.js" type="text/javascript"></script>
 </body>
 
 </html>
