@@ -12,7 +12,7 @@ export const items = [
       finalPrice: 10500,
       price: 11500,
       count: 200,
-      available: 220,
+      available: 250,
       checked: true
     },
     {
@@ -20,7 +20,7 @@ export const items = [
       finalPrice: 247,
       price: 475,
       count: 2,
-      available: 3,
+      available: 4,
       checked: true
     }
   ]

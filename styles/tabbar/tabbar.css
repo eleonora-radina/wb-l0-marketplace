@@ -27,19 +27,8 @@
     position: relative;
   }
 
-  .tabbar__count-label {
-    display: flex;
-    border-radius: 50%;
-    background-color: #F55123;
-    color: #fff;
-    height: 16px;
-    position: absolute;
+  .count-label_tabbar {
     top: -2px;
     right: 0;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 14px;
-    justify-content: center;
-    padding: 0 5px;
   }
 }

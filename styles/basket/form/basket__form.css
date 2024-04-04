@@ -60,6 +60,20 @@
   margin-bottom: 16px;
 }
 
+.basket__form-info-item_last {
+  margin-bottom: -5px;
+}
+
+.basket__form-delivery-item {
+  position: relative;
+}
+
+.count-label_item-delivery {
+  top: -8px;
+  right: 6px;
+  font-weight: 400;
+}
+
 .basket__form-info-title {
   max-width: 154px;
   width: 100%;
