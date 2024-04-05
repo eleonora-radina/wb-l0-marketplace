@@ -1,8 +1,7 @@
-import { items } from "./data/itemsData.js";
+import { items as itemsData } from "./data/itemsData.js";
 
 const basketItems = document.querySelectorAll('.basket__item');
 const basketMissingItems = document.querySelectorAll('.basket__missing-item');
-const deliveryItems = document.querySelectorAll('.basket__form-delivery-item');
 const totalOrderFinalPrice = document.querySelector('.total-final-price');
 const totalOrderPrice = document.querySelector('.total-price');
 const totalOrderSale = document.querySelector('.total-sale');
@@ -20,12 +19,13 @@ function deleteItem(item) {
   item.style.display = 'none';
 
   if (item.classList.contains('basket__item')) {
-    items.splice(items.findIndex(x => x.id === item.dataset.id), 1)
+    itemsData.splice(itemsData.findIndex(x => x.id === item.dataset.id), 1)
+    console.log(itemsData);
     updateTotalOrderPrice();
-    deleteDeliveryItem(item);
+    updateDeliveryDates();
 
-    if (items.length === 0) {
-      document.querySelector(".delivery-date").remove();
+    if (itemsData.length === 0) {
+      document.querySelector(".delivery-date-title").remove();
     }
 
   } else {
@@ -41,20 +41,15 @@ function likeItem(button) {
   button.classList.toggle('basket__button-like_active');
 }
 
-function deleteDeliveryItem(item) {
-  const deliveryItem = Array.from(deliveryItems).find(x => x.dataset.id === item.dataset.id);
-  deliveryItem.remove();
-}
-
 function updateTotalItemPrice(item) {
   const finalPrice = item.querySelector('.final-price');
   const finalPriceMobile = item.querySelector('.final-price_mobile');
   const price = item.querySelector('.basket__item-price');
   const priceMobile = item.querySelector('.basket__item-price_mobile');
 
-  const cost = items.find(x => x.id === item.dataset.id).price;
-  const finalCost = items.find(x => x.id === item.dataset.id).finalPrice;
-  const count = items.find(x => x.id === item.dataset.id).count;
+  const cost = itemsData.find(x => x.id === item.dataset.id).price;
+  const finalCost = itemsData.find(x => x.id === item.dataset.id).finalPrice;
+  const count = itemsData.find(x => x.id === item.dataset.id).count;
 
   const totalFinalPrice = finalCost * count;
   const totalPrice = cost * count;
@@ -72,7 +67,7 @@ function updateTotalOrderPrice() {
   let orderCount = 0;
   let orderPrice = 0;
 
-  items.filter(x => x.checked).forEach(function (item) {
+  itemsData.filter(x => x.checked).forEach(function (item) {
     orderCount += item.count;
     orderFinalPrice += item.finalPrice * item.count;
     orderPrice += item.price * item.count;
@@ -89,25 +84,75 @@ function updateTotalOrderPrice() {
 
   if (checkboxPayment.checked) {
     buttonOrder.textContent = 'Оплатить ' + orderFinalPrice + ' сом';
-  } 
+  }
 };
 
-function updateItemDeliveryCount(item) {
-  const deliveryItem = Array.from(deliveryItems).find(x => x.dataset.id === item.id);
-  const countLabel = deliveryItem.querySelector('.count-label_item-delivery');
-  let span = document.createElement(`span`);
-  span.className = `count-label count-label_item-delivery`;
-  span.innerHTML = `${item.count}`;
+function updateDeliveryDates() {
+
+  let checkedItems = itemsData.filter(x => x.checked);
+  console.log(checkedItems);
+  let productsToDelivery = checkedItems.map((item) => {
+      let a = item.count;
+      const availableDates = item.deliveryDateAmounts.filter(x => {
+          var result = a > 0;
+          a = item.count - x.amount;
+          return result;
+      });
   
-  if (countLabel) {
-    if (item.count !== 1) { 
-      countLabel.textContent = item.count;
-    } else {
-      countLabel.remove();
+      return { id: item.id, count: item.count, availableDates };
+  })
+  
+  let deliveryDates = [];
+  productsToDelivery.forEach(product => {
+    product.availableDates.forEach(date => {
+
+      let productToAdd = {...product};
+      productToAdd.count = date.amount > product.count ? product.count : date.amount;
+      product.count -= date.amount;
+
+      let currentdate = deliveryDates.findIndex(x => x.date === date.date);
+      if (currentdate === -1) {
+        deliveryDates.push({
+          date: date.date, products: [productToAdd]
+        })
+      } else {
+        deliveryDates[currentdate].products.push(productToAdd);
+      }
     }
-  } else {
-    deliveryItem.prepend(span);
-  }
+    )
+  })  
+
+  document.querySelectorAll('.delivery-date').forEach(x => x.remove());
+
+  deliveryDates.forEach(date => {
+
+    let productsBlock = date.products.map(product => {
+      let divDeliveryItem = document.createElement(`div`);
+      divDeliveryItem.className = `basket__form-delivery-item`;
+      divDeliveryItem.setAttribute('data-id', product.id)
+
+      if (product.count > 1) {
+        divDeliveryItem.innerHTML = `
+          <span class="count-label count-label_item-delivery">${product.count}</span>
+          <img class="basket__form-delivery-photo" src="./images/item${product.id}.jpg" alt="item${product.id}">
+        `;
+      } else {
+        divDeliveryItem.innerHTML = `
+        <img class="basket__form-delivery-photo" src="./images/item${product.id}.jpg" alt="item${product.id}">`;
+      }
+      return divDeliveryItem.outerHTML;
+    }).join('');
+
+    let divDeliveryDate = document.createElement(`div`);
+    divDeliveryDate.className = `basket__form-info-item delivery-date`;
+    divDeliveryDate.innerHTML = `
+      <p class="basket__form-info-title delivery-date-title">${date.date}</p>
+      <div class="basket__form-delivery-photos">
+        ${productsBlock}
+      </div>
+    `;
+    document.querySelector('.basket__form-delivery-price').before(divDeliveryDate);
+  });
 }
 
 basketItems.forEach(function (item) {
@@ -118,25 +163,25 @@ basketItems.forEach(function (item) {
   const buttonDelete = item.querySelector('.basket__button-delete');
   const itemAvailableCount = item.querySelector('.basket__item-left');
   const finalPrice = item.querySelector('.final-price');
-  const checkbox = item.querySelector('.form__item'); 
-  let index = items.findIndex(x => x.id === item.dataset.id);
+  const checkbox = item.querySelector('.form__item');
+  let itemData = itemsData.find(x => x.id === item.dataset.id);
 
   checkbox.addEventListener('click', function () {
-    items[index].checked = checkbox.checked;
-    checkboxChooseAll.checked = items.every(x => x.checked);
+    itemData.checked = checkbox.checked;
+    checkboxChooseAll.checked = itemsData.every(x => x.checked);
     updateTotalOrderPrice();
-    updateItemDeliveryCount(items[index]);
+    updateDeliveryDates();
   })
-  
+
   counterMinus.addEventListener('click', function () {
-    let currentCount = items[index].count;
+    let currentCount = itemData.count;
 
     if (currentCount > 1) {
       currentCount--;
-      items[index].count = currentCount;
+      itemData.count = currentCount;
       counterNumber.value = currentCount;
       updateTotalItemPrice(item);
-      updateItemDeliveryCount(items[index]);
+      updateDeliveryDates();
     }
 
     if (currentCount == 1) {
@@ -147,15 +192,15 @@ basketItems.forEach(function (item) {
       finalPrice.classList.remove('small');
     }
 
-    if (currentCount < items[index].available) {
+    if (currentCount < itemData.available) {
       counterPlus.style.color = 'black';
     }
 
-    if (currentCount + 2 === items[index].available) {
+    if (currentCount + 2 === itemData.available) {
       itemAvailableCount.textContent = `Осталось 2 шт.`;
-    } 
-    
-    if (currentCount + 1 === items[index].available) {
+    }
+
+    if (currentCount + 1 === itemData.available) {
       itemAvailableCount.textContent = `Осталось 1 шт.`;
     } else {
       itemAvailableCount.textContent = `  `;
@@ -166,31 +211,31 @@ basketItems.forEach(function (item) {
   counterPlus.addEventListener('click', function () {
     counterMinus.style.color = 'black';
 
-    let currentCount = items[index].count;
+    let currentCount = itemData.count;
 
-    if (currentCount === items[index].available) {
+    if (currentCount === itemData.available) {
       return;
     }
 
-    if (currentCount + 1 === items[index].available) {
+    if (currentCount + 1 === itemData.available) {
       counterPlus.style.color = 'rgba(0, 0, 0, 0.2)';
       itemAvailableCount.textContent = `  `;
     }
 
-    if (currentCount + 3 === items[index].available) {
+    if (currentCount + 3 === itemData.available) {
       itemAvailableCount.textContent = `Осталось 2 шт.`;
-    } 
-    
-    if (currentCount + 2 === items[index].available) {
+    }
+
+    if (currentCount + 2 === itemData.available) {
       itemAvailableCount.textContent = `Осталось 1 шт.`;
     }
 
     currentCount++;
-    items[index].count = currentCount;
+    itemData.count = currentCount;
     counterNumber.value = currentCount;
     updateTotalItemPrice(item);
-    updateItemDeliveryCount(items[index]);    
-    
+    updateDeliveryDates();
+
     if (currentCount >= 95) {
       finalPrice.classList.add('small');
     }
@@ -201,15 +246,15 @@ basketItems.forEach(function (item) {
 
     if (isNaN(currentCount)) {
       counterNumber.value = 1;
-      items[index].count = 1;
+      itemData.count = 1;
       updateTotalItemPrice(item);
-      updateItemDeliveryCount(items[index]);
+      updateDeliveryDates();
       return;
     }
 
     if (currentCount < 1) {
       counterNumber.value = 1;
-      items[index].count = 1;
+      itemData.count = 1;
     }
 
     if (currentCount == 1) {
@@ -218,9 +263,9 @@ basketItems.forEach(function (item) {
       counterMinus.style.color = 'black';
     }
 
-    items[index].count = currentCount;
+    itemData.count = currentCount;
     updateTotalItemPrice(item);
-    updateItemDeliveryCount(items[index]);
+    updateDeliveryDates();
   });
 
   buttonLike.addEventListener('click', () => likeItem(buttonLike));
@@ -239,9 +284,9 @@ checkboxChooseAll.addEventListener('click', function () {
   basketItems.forEach(function (item) {
     const checkbox = item.querySelector('.form__item');
     checkbox.checked = checkboxChooseAll.checked;
-    let index = items.findIndex(x => x.id === item.dataset.id);
+    let index = itemsData.findIndex(x => x.id === item.dataset.id);
     if (index >= 0) {
-      items[index].checked = checkboxChooseAll.checked;
+      itemData.checked = checkboxChooseAll.checked;
     }
   })
   updateTotalOrderPrice();
