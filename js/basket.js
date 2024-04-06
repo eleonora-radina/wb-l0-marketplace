@@ -284,12 +284,14 @@ checkboxChooseAll.addEventListener('click', function () {
   basketItems.forEach(function (item) {
     const checkbox = item.querySelector('.form__item');
     checkbox.checked = checkboxChooseAll.checked;
-    let index = itemsData.findIndex(x => x.id === item.dataset.id);
-    if (index >= 0) {
+
+    let itemData = itemsData.find(x => x.id === item.dataset.id);
+    if (itemData) {
       itemData.checked = checkboxChooseAll.checked;
     }
   })
   updateTotalOrderPrice();
+  updateDeliveryDates();
 });
 
 checkboxPayment.addEventListener('click', function () {

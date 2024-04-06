@@ -21,7 +21,7 @@ const cardLogoSidebar = document.querySelector('.card-logo-sidebar');
 const cardNumberSidebar = document.querySelector('.card-number-sidebar');
 let numberInfo;
 let logoInfo;
-let addressInfo;
+let isCourier;
 
 const shopDeliveryButton = document.querySelector('.popup__delivery-button_shop');
 const courierDeliveryButton = document.querySelector('.popup__delivery-button_courier');
@@ -31,7 +31,14 @@ const buttonDelivery = document.querySelector('.popup__button_delivery');
 const addressItems = document.querySelectorAll('.popup__address-label');
 const choosenAddress = document.querySelector('.basket__form-address');
 const choosenAddressSidebar = document.querySelector('.sidebar__info-address');
+const deliveryTitle = document.querySelector('.delivery-title');
+const deliveryRating = document.querySelector('.delivery-shop-info');
 
+const popupDeliveryItem = document.querySelectorAll('.popup__form-radio');
+  popupDeliveryItem.forEach(item => {
+  const buttonDelete = item.querySelector('.popup__button-delete');
+  buttonDelete.addEventListener('click', () => item.remove());
+})
 
 cardItems.forEach(function(item) {
   const card = item.querySelector('.popup__radio-input');
@@ -44,15 +51,9 @@ cardItems.forEach(function(item) {
   });
 })
 
-addressItems.forEach(function(item) {
-  const address = item.querySelector('.popup__form-address');
-
-  address.addEventListener('click', function() {
-    addressInfo = address.textContent;
-  });
-})
-
 const openPopup = (popup) => {
+  document.querySelectorAll('input[name="address"]')[0].checked = true;
+  document.querySelectorAll('input[name="shop"]')[0].checked = true;
   popup.classList.add('popup_opened');
 }
 
@@ -64,11 +65,12 @@ const toggleTooltip = (tooltip) => {
   tooltip.classList.toggle('tooltip_opened');
 }
 
-const toggleAddresses = (button, hiddenButton, addresses, hiddenAddresses) => {
+const toggleAddresses = (button, hiddenButton, addresses, hiddenAddresses, courier) => {
   button.classList.add('button_active');
   hiddenButton.classList.remove('button_active');
   hiddenAddresses.classList.add('hidden-addresses');
   addresses.classList.remove('hidden-addresses');
+  isCourier = courier;
 }
 
 accordionButton.addEventListener('click', () => toggleAccordionList());
@@ -96,11 +98,22 @@ buttonPayment.addEventListener('click', function() {
 })
 
 buttonDelivery.addEventListener('click', function() {
+  let addressInfo;
+
+  if (isCourier) { 
+    addressInfo = document.querySelector('input[name="address"]:checked').value;
+    deliveryTitle.textContent = 'Доставка курьером';
+    deliveryRating.style.display = 'none';
+  } else {
+    addressInfo = document.querySelector('input[name="shop"]:checked').value;
+    deliveryTitle.textContent = 'Пункт выдачи';
+    deliveryRating.style.display = 'flex';
+  }
+
   choosenAddress.textContent = addressInfo;
   choosenAddressSidebar.textContent = addressInfo;
-  
   closePopup(popupDeliveryForm);
 })
 
-shopDeliveryButton.addEventListener('click', () => toggleAddresses(shopDeliveryButton, courierDeliveryButton, shopAddresses, courierAddresses));
-courierDeliveryButton.addEventListener('click', () => toggleAddresses(courierDeliveryButton, shopDeliveryButton, courierAddresses, shopAddresses));
+shopDeliveryButton.addEventListener('click', () => toggleAddresses(shopDeliveryButton, courierDeliveryButton, shopAddresses, courierAddresses, false));
+courierDeliveryButton.addEventListener('click', () => toggleAddresses(courierDeliveryButton, shopDeliveryButton, courierAddresses, shopAddresses, true));
