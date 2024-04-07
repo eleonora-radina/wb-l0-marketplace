@@ -32,6 +32,7 @@ const addressItems = document.querySelectorAll('.popup__address-label');
 const choosenAddress = document.querySelector('.basket__form-address');
 const choosenAddressSidebar = document.querySelector('.sidebar__info-address');
 const deliveryTitle = document.querySelector('.delivery-title');
+const sidebarDeliveryTitle = document.querySelector('.sidebar-delivery-title');
 const deliveryRating = document.querySelector('.delivery-shop-info');
 
 const popupDeliveryItem = document.querySelectorAll('.popup__form-radio');
@@ -103,10 +104,12 @@ buttonDelivery.addEventListener('click', function() {
   if (isCourier) { 
     addressInfo = document.querySelector('input[name="address"]:checked').value;
     deliveryTitle.textContent = 'Доставка курьером';
+    sidebarDeliveryTitle.textContent = 'Доставка курьером';
     deliveryRating.style.display = 'none';
   } else {
     addressInfo = document.querySelector('input[name="shop"]:checked').value;
     deliveryTitle.textContent = 'Пункт выдачи';
+    sidebarDeliveryTitle.textContent = 'Доставка в пункт выдачи';
     deliveryRating.style.display = 'flex';
   }
 
