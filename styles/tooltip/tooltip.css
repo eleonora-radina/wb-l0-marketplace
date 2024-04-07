@@ -79,3 +79,11 @@
     color: #A0A0A4;
   }
   
+
+  @media (max-width: 1020px) {
+
+    .tooltip_free-delivery {
+      top: 45px;
+      left: 10px;
+    }
+  }

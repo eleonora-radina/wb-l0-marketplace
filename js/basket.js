@@ -13,14 +13,15 @@ const totalOrderFinalPriceHeader = document.querySelector('.basket__list-header-
 const checkboxChooseAll = document.getElementById('select-all');
 const missingItemsCount = document.querySelector('.missing-count');
 const checkboxPayment = document.getElementById('payment-checkbox');
+
 let orderFinalPrice = 2101063;
 
-function deleteItem(item) {
+const deleteItem = (item) => {
   item.style.display = 'none';
 
   if (item.classList.contains('basket__item')) {
     itemsData.splice(itemsData.findIndex(x => x.id === item.dataset.id), 1)
-    console.log(itemsData);
+
     updateTotalOrderPrice();
     updateDeliveryDates();
 
@@ -37,11 +38,11 @@ function deleteItem(item) {
   }
 }
 
-function likeItem(button) {
+const likeItem = (button) => {
   button.classList.toggle('basket__button-like_active');
 }
 
-function updateTotalItemPrice(item) {
+const updateTotalItemPrice = (item) => {
   const finalPrice = item.querySelector('.final-price');
   const finalPriceMobile = item.querySelector('.final-price_mobile');
   const price = item.querySelector('.basket__item-price');
@@ -62,12 +63,12 @@ function updateTotalItemPrice(item) {
   updateTotalOrderPrice();
 };
 
-function updateTotalOrderPrice() {
+const updateTotalOrderPrice = () => {
   orderFinalPrice = 0;
   let orderCount = 0;
   let orderPrice = 0;
 
-  itemsData.filter(x => x.checked).forEach(function (item) {
+  itemsData.filter(x => x.checked).forEach(item => {
     orderCount += item.count;
     orderFinalPrice += item.finalPrice * item.count;
     orderPrice += item.price * item.count;
@@ -87,40 +88,41 @@ function updateTotalOrderPrice() {
   }
 };
 
-function updateDeliveryDates() {
+const updateDeliveryDates = () => {
+  let productsToDelivery = itemsData
+    .filter(x => x.checked)
+    .map((item) => {
+      let count = item.count;
 
-  let checkedItems = itemsData.filter(x => x.checked);
-  console.log(checkedItems);
-  let productsToDelivery = checkedItems.map((item) => {
-      let a = item.count;
-      const availableDates = item.deliveryDateAmounts.filter(x => {
-          var result = a > 0;
-          a = item.count - x.amount;
-          return result;
+      const availableDates = item.deliveryDateAmounts.filter(date => {
+        let isAvailable = count > 0;
+        count = item.count - date.amount;
+        return isAvailable;
       });
-  
+
       return { id: item.id, count: item.count, availableDates };
   })
-  
+
   let deliveryDates = [];
   productsToDelivery.forEach(product => {
     product.availableDates.forEach(date => {
-
       let productToAdd = {...product};
-      productToAdd.count = date.amount > product.count ? product.count : date.amount;
+      productToAdd.count = date.amount > product.count
+        ? product.count
+        : date.amount;
+
       product.count -= date.amount;
 
-      let currentdate = deliveryDates.findIndex(x => x.date === date.date);
-      if (currentdate === -1) {
+      let currentDate = deliveryDates.findIndex(x => x.date === date.date);
+      if (currentDate === -1) {
         deliveryDates.push({
           date: date.date, products: [productToAdd]
         })
       } else {
-        deliveryDates[currentdate].products.push(productToAdd);
+        deliveryDates[currentDate].products.push(productToAdd);
       }
-    }
-    )
-  })  
+    });
+  })
 
   document.querySelectorAll('.delivery-date').forEach(x => x.remove());
 
@@ -155,7 +157,7 @@ function updateDeliveryDates() {
   });
 }
 
-basketItems.forEach(function (item) {
+basketItems.forEach(item => {
   const counterMinus = item.querySelector('.counter__minus');
   const counterPlus = item.querySelector('.counter__plus');
   const counterNumber = item.querySelector('.counter__number');
@@ -166,14 +168,14 @@ basketItems.forEach(function (item) {
   const checkbox = item.querySelector('.form__item');
   let itemData = itemsData.find(x => x.id === item.dataset.id);
 
-  checkbox.addEventListener('click', function () {
+  checkbox.addEventListener('click', () => {
     itemData.checked = checkbox.checked;
     checkboxChooseAll.checked = itemsData.every(x => x.checked);
     updateTotalOrderPrice();
     updateDeliveryDates();
   })
 
-  counterMinus.addEventListener('click', function () {
+  counterMinus.addEventListener('click', () => {
     let currentCount = itemData.count;
 
     if (currentCount > 1) {
@@ -205,10 +207,9 @@ basketItems.forEach(function (item) {
     } else {
       itemAvailableCount.textContent = `  `;
     }
-
   });
 
-  counterPlus.addEventListener('click', function () {
+  counterPlus.addEventListener('click', () => {
     counterMinus.style.color = 'black';
 
     let currentCount = itemData.count;
@@ -241,7 +242,7 @@ basketItems.forEach(function (item) {
     }
   });
 
-  counterNumber.addEventListener('input', function () {
+  counterNumber.addEventListener('input', () => {
     let currentCount = parseInt(counterNumber.value, 10);
 
     if (isNaN(currentCount)) {
@@ -257,11 +258,7 @@ basketItems.forEach(function (item) {
       itemData.count = 1;
     }
 
-    if (currentCount == 1) {
-      counterMinus.style.color = 'rgba(0, 0, 0, 0.2)';
-    } else {
-      counterMinus.style.color = 'black';
-    }
+    counterMinus.style.color = currentCount == 1 ? 'rgba(0, 0, 0, 0.2)' : 'black';
 
     itemData.count = currentCount;
     updateTotalItemPrice(item);
@@ -272,7 +269,7 @@ basketItems.forEach(function (item) {
   buttonDelete.addEventListener('click', () => deleteItem(item));
 });
 
-basketMissingItems.forEach(function (item) {
+basketMissingItems.forEach(item => {
   const buttonLike = item.querySelector('.basket__button-like');
   const buttonDelete = item.querySelector('.basket__button-delete');
 
@@ -280,9 +277,9 @@ basketMissingItems.forEach(function (item) {
   buttonDelete.addEventListener('click', () => deleteItem(item));
 });
 
-checkboxChooseAll.addEventListener('click', function () {
-  basketItems.forEach(function (item) {
-    const checkbox = item.querySelector('.form__item');
+checkboxChooseAll.addEventListener('click', () => {
+  basketItems.forEach(item => {
+    let checkbox = item.querySelector('.form__item');
     checkbox.checked = checkboxChooseAll.checked;
 
     let itemData = itemsData.find(x => x.id === item.dataset.id);
@@ -290,16 +287,17 @@ checkboxChooseAll.addEventListener('click', function () {
       itemData.checked = checkboxChooseAll.checked;
     }
   })
+
   updateTotalOrderPrice();
   updateDeliveryDates();
 });
 
-checkboxPayment.addEventListener('click', function () {
-  if (checkboxPayment.checked) {
-    document.querySelector('.upon-receipt-payment').style.display = 'none';
-    buttonOrder.textContent = 'Оплатить ' + orderFinalPrice + ' сом';
-  } else {
-    document.querySelector('.upon-receipt-payment').style.display = 'block';
-    buttonOrder.textContent = 'Заказать';
-  }
+checkboxPayment.addEventListener('click', () => {
+  document.querySelector('.upon-receipt-payment').style.display = checkboxPayment.checked
+    ? 'none'
+    : 'block';
+
+  buttonOrder.textContent = checkboxPayment.checked
+    ? 'Оплатить ' + orderFinalPrice + ' сом'
+    : 'Заказать';
 })

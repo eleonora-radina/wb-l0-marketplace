@@ -21,9 +21,10 @@ const emailRegex = /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.[a-zA-Z]{2,3})+$)/;
 const phoneRegex = /^[1-9]?[-]?\(?\d{3}\)?[-]?\d{3}[-]?\d{2}[-]?\d{2}$/;
 const tinRegex = /[0-9]{14}/;
 
-
 const validateInput = (regex, userFormInput, value, nameError, textError) => {
-  if (value === '' || regex.test(value)) {
+    let isValid = value === '' || regex.test(value);
+
+    if (isValid) {
     nameError.textContent = ' ';
     userFormInput.classList.remove('basket__form-input_error');
   } else {
@@ -32,7 +33,7 @@ const validateInput = (regex, userFormInput, value, nameError, textError) => {
   }
 };
 
-function formatPhoneNumber() {
+const formatPhoneNumber = () => {
   var phoneNumber = userFormInputPhone.value.replace(/\D/g, '');
 
   if (phoneNumber.length > 0 && phoneNumber.length <= 1) {
@@ -47,27 +48,13 @@ function formatPhoneNumber() {
   } else if (phoneNumber.length > 10) {
     phoneNumber = '+' + phoneNumber.slice(0, 1) + ' (' + phoneNumber.slice(1, 4) + ') ' + phoneNumber.slice(4, 7) + '-' + phoneNumber.slice(7, 9) + '-' + phoneNumber.slice(9, 11);
   }
-
+  
   userFormInputPhone.value = phoneNumber;
 }
 
-
-userFormInputPhone.addEventListener('input', function () {
-  if (userFormInputPhone.value.replace(/\D/g, '').length <= 11) {
-    formatPhoneNumber();
-  } else {
-    userFormInputPhone.value = userFormInputPhone.value.slice(0, 18);
-  }
-});
-
-userFormInputName.addEventListener('blur', () => validateInput(nameRegex, userFormInputName, userFormInputName.value, userFormInputNameError, 'Укажите имя'));
-userFormInputSurname.addEventListener('blur', () => validateInput(nameRegex, userFormInputSurname, userFormInputSurname.value, userFormInputSurnameError, 'Введите фамилию'));
-userFormInputEmail.addEventListener('blur', () => validateInput(emailRegex, userFormInputEmail, userFormInputEmail.value, userFormInputEmailError, 'Проверьте адрес электронной почты'));
-userFormInputPhone.addEventListener('blur', () => validateInput(phoneRegex, userFormInputPhone, userFormInputPhone.value.replace(/\D/g, ''), userFormInputPhoneError, 'Формат: +9 999 999 99 99'));
-userFormInputTIN.addEventListener('blur', () => validateInput(tinRegex, userFormInputTIN, userFormInputTIN.value, userFormInputTINError, 'Проверьте ИНН'));
-
 const isValidForm = () => {
   let isValid = true;
+
   if (!nameRegex.test(userFormInputName.value) || userFormInputName.value === '') {
     userFormInputNameError.textContent = 'Укажите имя';
     userFormInputName.classList.add('basket__form-input_error');
@@ -97,6 +84,7 @@ const isValidForm = () => {
     userFormInputTIN.classList.add('basket__form-input_error');
     isValid = false;
   }
+
   return isValid;
 }
 
@@ -107,6 +95,20 @@ const orderButton = () => {
     userForm.scrollIntoView();
   }
 }
+
+userFormInputPhone.addEventListener('input', () => {
+    if (userFormInputPhone.value.replace(/\D/g, '').length <= 11) {
+        formatPhoneNumber();
+    } else {
+        userFormInputPhone.value = userFormInputPhone.value.slice(0, 18);
+    }
+});
+
+userFormInputName.addEventListener('blur', () => validateInput(nameRegex, userFormInputName, userFormInputName.value, userFormInputNameError, 'Укажите имя'));
+userFormInputSurname.addEventListener('blur', () => validateInput(nameRegex, userFormInputSurname, userFormInputSurname.value, userFormInputSurnameError, 'Введите фамилию'));
+userFormInputEmail.addEventListener('blur', () => validateInput(emailRegex, userFormInputEmail, userFormInputEmail.value, userFormInputEmailError, 'Проверьте адрес электронной почты'));
+userFormInputPhone.addEventListener('blur', () => validateInput(phoneRegex, userFormInputPhone, userFormInputPhone.value.replace(/\D/g, ''), userFormInputPhoneError, 'Формат: +9 999 999 99 99'));
+userFormInputTIN.addEventListener('blur', () => validateInput(tinRegex, userFormInputTIN, userFormInputTIN.value, userFormInputTINError, 'Проверьте ИНН'));
 
 buttonOrder.addEventListener('click', () => orderButton());
 buttonCloseOrderPopup.addEventListener('click', () => { popupOrder.classList.remove('popup_opened') });

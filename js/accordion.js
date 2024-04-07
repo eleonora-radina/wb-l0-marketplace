@@ -22,3 +22,6 @@ const toggleAccordionList = () => {
     basketMissingList.classList.toggle('hidden-missing-list');
   }
   
+
+accordionButton.addEventListener('click', () => toggleAccordionList());
+accordionMissingButton.addEventListener('click', () => toggleAccordionMissingList());
